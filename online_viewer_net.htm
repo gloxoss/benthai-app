@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Proposal: Custom Restaurant Ordering Platform</title>
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-bg': '#F9FAFB',
+                        'brand-card': '#FFFFFF',
+                        'brand-border': '#E5E7EB',
+                        'brand-text': '#111827',
+                        'brand-muted': '#6B7280',
+                        'brand-accent': '#2563EB',
+                        'brand-accent-light': '#EFF6FF',
+                        'brand-success': '#10B981',
+                        'brand-warning': '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+  
+    <style>
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .section-title { letter-spacing: -0.025em; }
+        h1, h2, h3 { scroll-margin-top: 80px; }
+        .feature-item { transition: all 0.2s ease; }
+        .feature-item:hover { background-color: #F9FAFB; border-radius: 8px; padding: 8px; }
+        @media print {
+            #topbar, #next-steps a, #print-button { display: none !important; }
+            main { margin: 0 !important; }
+            section, div {
+                border: none !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+             body { background: #fff !important; color: #000 !important;}
+             .print-no-bg { background-color: transparent !important; }
+        }
+    </style>
+</head>
+
+<body class="bg-brand-bg text-brand-text font-sans">
+
+    <!-- Header & Navigation -->
+    <header id="topbar" class="bg-brand-card/80 backdrop-blur-lg sticky top-0 z-40 border-b border-brand-border">
+        <div class="container mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="font-bold text-lg tracking-tight">
+                Strategic Proposal by Oussama
+            </div>
+            <div class="flex items-center gap-4">
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-brand-muted">
+                    <a href="#opportunity" class="hover:text-brand-text">Opportunity</a>
+                    <a href="#philosophy" class="hover:text-brand-text">Philosophy</a>
+                    <a href="#packages" class="hover:text-brand-text">Packages</a>
+                    <a href="#investment" class="hover:text-brand-text">Investment</a>
+                    <a href="#journey" class="hover:text-brand-text">Journey</a>
+                    <a href="#after-launch" class="hover:text-brand-text">After Launch</a>
+                </nav>
+                 <button id="print-button" class="bg-brand-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
+                    Print / Save PDF
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-12 md:py-20">
+        <main class="max-w-4xl mx-auto">
+
+            <!-- Title Section -->
+            <section id="title" class="mb-16 text-center">
+                <p class="font-semibold text-brand-accent uppercase tracking-wide">Proposal for [Client Restaurant Name]</p>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter section-title mt-2">
+                    Empower Your Restaurant with a Custom Digital Ordering Platform
+                </h1>
+                <p class="text-xl text-brand-muted mt-4">Date: August 31, 2025 | Prepared by Oussama, Freelance Software Developer</p>
+            </section>
+          
+            <!-- Executive Summary -->
+            <section id="summary" class="mb-16">
+                <div class="p-8 bg-brand-card border border-brand-border rounded-xl shadow-sm">
+                    <h2 class="text-2xl font-bold section-title mb-4">Executive Summary</h2>
+                    <div class="space-y-4 text-brand-muted">
+                        <p>In today's fast-paced market, restaurants must deliver seamless digital experiences to thrive. Traditional phone orders are prone to errors, miscommunications, and inefficiencies, while third-party apps like Glovo or Jumia Food charge commissions up to 35%, cutting into your profits.</p>
+                        <p>This proposal presents a bespoke, commission-free web-based ordering platform tailored to your restaurant. It's more than software—it's a strategic asset designed to <span class="font-semibold text-brand-text">streamline operations, boost average order values by 15-25%, reduce errors by 80%, and foster direct customer relationships through owned data.</span></p>
+                        <p>Delivered as a Minimum Viable Product (MVP) in just 8 weeks, this platform uses modern, scalable technology. We offer three tiered packages to fit your budget (7,000-14,500 MAD), with clear milestones, low ongoing costs, and optional maintenance for long-term success.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Opportunity -->
+            <section id="opportunity" class="mb-16">
+                 <h2 class="text-3xl font-bold section-title mb-6">The Opportunity: Reclaim Control and Drive Growth</h2>
+                 <p class="text-brand-muted mb-6">By owning your platform, you unlock efficiencies and revenue streams unavailable through third-party services. Here's how:</p>
+                 <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <svg class="w-8 h-8 mx-auto text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 1.343-3 3v1h6v-1c0-1.657-1.343-3-3-3zm0-4a7 7 0 00-7 7v1h2v-1a5 5 0 0110 0v1h2v-1a7 7 0 00-7-7zM5 16h14v2H5v-2z"></path></svg>
+                        <h3 class="font-bold text-lg mt-4">Retain 100% Profits</h3>
+                        <p class="text-sm text-brand-muted mt-2">Eliminate commissions—keep every dirham from orders, potentially adding thousands to your monthly revenue.</p>
+                    </div>
+                     <div class="p-6 bg-brand-card border border-brand-border rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <svg class="w-8 h-8 mx-auto text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        <h3 class="font-bold text-lg mt-4">Own Customer Insights</h3>
+                        <p class="text-sm text-brand-muted mt-2">Collect data on preferences and habits for targeted marketing, increasing repeat business by up to 30%.</p>
+                    </div>
+                     <div class="p-6 bg-brand-card border border-brand-border rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <svg class="w-8 h-8 mx-auto text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <h3 class="font-bold text-lg mt-4">Elevate Your Brand</h3>
+                        <p class="text-sm text-brand-muted mt-2">A polished, custom interface builds trust and loyalty, differentiating you from competitors.</p>
+                    </div>
+                 </div>
+            </section>
+          
+             <!-- Our Philosophy -->
+            <section id="philosophy" class="mb-16">
+                 <h2 class="text-3xl font-bold section-title mb-6">Our Guiding Philosophy: Building for Lasting Impact</h2>
+                 <p class="text-brand-muted mb-6">As a freelance developer with expertise in web and app solutions, I prioritize value-driven development. Here's what sets this approach apart:</p>
+                 <div class="space-y-6">
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-lg">Business-Centric Design</h3>
+                        <p class="text-sm text-brand-muted mt-1">Every feature aligns with your goals—revenue growth, cost reduction, or customer satisfaction. We avoid "nice-to-haves" unless they deliver ROI.</p>
+                    </div>
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-lg">Modern, Scalable Tech Stack</h3>
+                        <p class="text-sm text-brand-muted mt-1">Using Next.js (React) for frontend, Node.js/Supabase for backend, PostgreSQL database, and Vercel hosting. This ensures speed, security, and easy future expansions like mobile apps.</p>
+                    </div>
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-lg">Transparent Collaboration</h3>
+                        <p class="text-sm text-brand-muted mt-1">Weekly updates via Trello, shared prototypes in Figma, and milestone demos. You'll have full access to the GitHub repo for oversight.</p>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Packages Section -->
+            <section id="packages" class="space-y-12">
+                <h2 class="text-4xl font-bold section-title text-center">Tailored Packages: Choose Your Path to Success</h2>
+                <p class="text-center text-brand-muted mb-8">Three MVP options, all deliverable in 8 weeks, balanced for your budget and needs. Each builds on the last for progressive value.</p>
+
+                <!-- STARTER MVP -->
+                <div class="p-8 border border-brand-border rounded-xl bg-brand-card print-no-bg shadow-md">
+                    <h3 class="text-2xl font-bold section-title">Plan 1: Starter MVP (7,000 MAD)</h3>
+                    <p class="font-semibold mt-2">Ideal for: Quick launch to digitize basics and eliminate phone chaos.</p>
+                    <p class="text-brand-muted mt-1">Focus: Core ordering foundation with minimal setup.</p>
+                    <div class="mt-6 border-t border-brand-border pt-6 space-y-5">
+                        <div class="feature-item p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg flex items-center"><span class="text-brand-success mr-2">✓</span> Interactive Digital Menu & Cart</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">Details:</span> Responsive web view with search, categories, images, and custom notes (e.g., "extra spicy").</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Impact:</span> Boosts order values by encouraging add-ons; reduces miscommunications.</p>
+                        </div>
+                        <div class="feature-item p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg flex items-center"><span class="text-brand-success mr-2">✓</span> Secure Admin Dashboard</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">Details:</span> Real-time order list, status updates (en traitement → prêt), and basic menu CRUD.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Impact:</span> Centralizes operations, cutting errors by 70%+.</p>
+                        </div>
+                        <div class="feature-item p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg flex items-center"><span class="text-brand-success mr-2">✓</span> Ticket Printing System</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">Details:</span> 80mm PDF generation with QR codes for thermal printers (browser/Bluetooth compatible).</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Impact:</span> Streamlines kitchen workflow, speeding prep times.</p>
+                        </div>
+                        <p class="text-sm text-brand-warning mt-4">Warranty: 30 days free bug fixes. Delivery: 6-7 weeks.</p>
+                    </div>
+                </div>
+
+                <!-- LEAN MVP -->
+                <div class="p-8 border-2 border-brand-accent rounded-xl bg-brand-accent-light print-no-bg shadow-md relative">
+                    <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-brand-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Recommended</div>
+                    <h3 class="text-2xl font-bold section-title">Plan 2: Lean MVP (12,000 MAD)</h3>
+                    <p class="font-semibold mt-2">Ideal for: Efficiency-focused owners seeking automation and insights.</p>
+                    <p class="text-brand-muted mt-1">Focus: Enhanced real-time operations and customer engagement.</p>
+                    <div class="mt-6 border-t border-brand-accent/50 pt-6 space-y-5">
+                        <div class="feature-item p-4 rounded-lg"><h4 class="font-bold text-brand-accent">All Starter Features, Plus:</h4></div>
+                        <div class="feature-item p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg flex items-center"><span class="text-brand-success mr-2">✓</span> Real-Time Order Notifications</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">Details:</span> Instant updates via WebSockets; browser alerts for new orders.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Impact:</span> Reduces response times, improving peak-hour efficiency by 40%.</p>
+                        </div>
+                        <div class="feature-item p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg flex items-center"><span class="text-brand-success mr-2">✓</span> Customer Tracking & Confirmations</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">Details:</span> Live status page; email/SMS confirmations (SendGrid free tier).</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Impact:</span> Cuts inquiry calls; boosts satisfaction and loyalty.</p>
+                        </div>
+                        <div class="feature-item p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg flex items-center"><span class="text-brand-success mr-2">✓</span> Basic Analytics Dashboard</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">Details:</span> Charts for sales, top items; CSV exports.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Impact:</span> Data-driven decisions for menu optimization and promotions.</p>
+                        </div>
+                        <p class="text-sm text-brand-warning mt-4">Warranty: 45 days. Includes i18n-ready (French primary).</p>
+                    </div>
+                </div>
+
+                <!-- COMPLETE MVP -->
+                <div class="p-8 border border-brand-border rounded-xl bg-brand-card print-no-bg shadow-md">
+                    <h3 class="text-2xl font-bold section-title">Plan 3: Complete MVP (14,500 MAD)</h3>
+                    <p class="font-semibold mt-2">Ideal for: Growth-oriented owners needing advanced control and inclusivity.</p>
+                    <p class="text-brand-muted mt-1">Focus: Full scalability with multilingual and role-based features.</p>
+                    <div class="mt-6 border-t border-brand-border pt-6 space-y-5">
+                        <div class="feature-item p-4 rounded-lg"><h4 class="font-bold text-gray-500">All Lean Features, Plus:</h4></div>
+                        <div class="feature-item p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg flex items-center"><span class="text-brand-success mr-2">✓</span> Multi-Language Support (FR/AR/EN)</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">Details:</span> Seamless toggling; basic translations for broader reach.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Impact:</span> Expands customer base in multilingual markets like Morocco.</p>
+                        </div>
+                        <div class="feature-item p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg flex items-center"><span class="text-brand-success mr-2">✓</span> Advanced Role Management</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">Details:</span> RBAC for admin, cashier, staff; permission controls.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Impact:</span> Enhances security; scales for teams.</p>
+                        </div>
+                        <div class="feature-item p-4 rounded-lg">
+                            <h4 class="font-semibold text-lg flex items-center"><span class="text-brand-success mr-2">✓</span> Enhanced Reports & Alerts</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">Details:</span> Low-stock flags, shift reports, quarterly summaries.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Impact:</span> Proactive inventory; better forecasting.</p>
+                        </div>
+                        <p class="text-sm text-brand-warning mt-4">Warranty: 60 days. Ready for add-ons like payments.</p>
+                    </div>
+                </div>
+            </section>
+          
+            <!-- Investment -->
+            <section id="investment" class="pt-16">
+                 <h2 class="text-4xl font-bold section-title text-center">Your Investment: Value at Every Level</h2>
+                 <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto">Fixed pricing within 7,000-15,000 MAD. Compare features and see the ROI potential (e.g., save 20-30% on commissions annually).</p>
+                 <div class="bg-brand-card border border-brand-border rounded-xl overflow-x-auto print-no-bg shadow-md">
+                    <table class="w-full text-sm">
+                        <thead>
+                             <tr class="border-b border-brand-border bg-brand-bg">
+                                <th class="p-4 text-left font-semibold text-lg">Feature / Aspect</th>
+                                <th class="p-4 text-center font-semibold">Starter (7k MAD)</th>
+                                <th class="p-4 text-center font-semibold text-brand-accent">Lean (12k MAD)</th>
+                                <th class="p-4 text-center font-semibold">Complete (14.5k MAD)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-brand-border">
+                            <tr><td class="p-3 pl-6 font-semibold" colspan="4">Core Platform</td></tr>
+                            <tr><td class="p-3 pl-8">Digital Menu & Search/Cart</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Admin Dashboard & Menu CRUD</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Ticket Printing (80mm PDF/QR)</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Order Management & Status</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr class="bg-brand-bg"><td class="p-3 pl-6 font-semibold" colspan="4">Automation Features</td></tr>
+                            <tr><td class="p-3 pl-8">Real-Time Updates/Notifications</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Customer Tracking Page</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Email/SMS Confirmations</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr class="bg-brand-bg"><td class="p-3 pl-6 font-semibold" colspan="4">Analytics & Advanced</td></tr>
+                            <tr><td class="p-3 pl-8">Sales Analytics/Charts/Exports</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Multi-Language (FR/AR/EN)</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center font-bold">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Role-Based Access Control</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center font-bold">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Low-Stock Alerts/Shift Reports</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center font-bold">✓</td></tr>
+                            <tr class="bg-brand-bg"><td class="p-3 pl-6 font-semibold" colspan="4">General</td></tr>
+                            <tr><td class="p-3 pl-8">Warranty & Support</td><td class="p-3 text-center">30 days</td><td class="p-3 text-center">45 days</td><td class="p-3 text-center">60 days</td></tr>
+                            <tr><td class="p-3 pl-8">Delivery Timeline</td><td class="p-3 text-center">6-7 weeks</td><td class="p-3 text-center">8 weeks</td><td class="p-3 text-center">8 weeks</td></tr>
+                        </tbody>
+                    </table>
+                 </div>
+            </section>
+
+            <!-- Roadmap Section -->
+            <section id="journey" class="pt-16">
+                <h2 class="text-4xl font-bold section-title text-center">The Journey: 8-Week Roadmap to Launch</h2>
+                <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto">Agile process with 200-250 hours effort. Weekly check-ins, Trello tracking, and client involvement ensure alignment.</p>
+                <div class="border-l-2 border-brand-accent space-y-10 pl-8">
+                    <div>
+                        <h3 class="text-xl font-bold flex items-center"><span class="text-brand-accent mr-2">•</span> Phase 1 (Weeks 1-2): Discovery & Planning (40 hours)</h3>
+                        <p class="text-sm font-semibold text-brand-muted mt-2">Goal: Align on vision; create blueprints.</p>
+                        <p class="text-sm mt-2"><span class="font-semibold">Activities:</span> Requirements workshop, Figma wireframes, data model, tech setup (GitHub repo).</p>
+                        <p class="text-sm mt-1"><span class="font-semibold">Collaboration:</span> Client feedback on prototypes; milestone: Signed scope.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold flex items-center"><span class="text-brand-accent mr-2">•</span> Phase 2 (Weeks 3-4): Backend & Admin Build (60 hours)</h3>
+                        <p class="text-sm font-semibold text-brand-muted mt-2">Goal: Secure core operations.</p>
+                        <p class="text-sm mt-2"><span class="font-semibold">Activities:</span> Database setup, API development, admin dashboard, printing integration.</p>
+                        <p class="text-sm mt-1"><span class="font-semibold">Collaboration:</span> Client tests menu management; provide content (images, prices).</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold flex items-center"><span class="text-brand-accent mr-2">•</span> Phase 3 (Weeks 5-6): Frontend & Integration (60 hours)</h3>
+                         <p class="text-sm font-semibold text-brand-muted mt-2">Goal: Craft user-friendly interfaces.</p>
+                        <p class="text-sm mt-2"><span class="font-semibold">Activities:</span> Customer UI (menu, cart), realtime connections, testing.</p>
+                        <p class="text-sm mt-1"><span class="font-semibold">Collaboration:</span> Mid-demo; feedback on UX.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold flex items-center"><span class="text-brand-accent mr-2">•</span> Phase 4 (Weeks 7-8): Testing, Deployment & Handover (40 hours)</h3>
+                        <p class="text-sm font-semibold text-brand-muted mt-2">Goal: Ensure reliability and transfer knowledge.</p>
+                        <p class="text-sm mt-2"><span class="font-semibold">Activities:</span> Bug fixes, security scans, domain/SSL setup, documentation.</p>
+                        <p class="text-sm mt-1"><span class="font-semibold">Collaboration:</span> UAT testing; 2-hour training session.</p>
+                    </div>
+                </div>
+                <p class="text-sm text-brand-muted mt-8">Risk Mitigation: 10% contingency buffer; extra changes at 200 MAD/hour.</p>
+            </section>
+          
+            <!-- Life After Launch -->
+            <section id="after-launch" class="pt-16">
+                <h2 class="text-4xl font-bold section-title text-center">After Launch: Sustainable Growth & Support</h2>
+                <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto">Your platform evolves with your business. Low costs and flexible plans keep it running smoothly.</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                     <div class="p-6 bg-brand-card border border-brand-border rounded-lg shadow-sm print-no-bg">
+                        <h3 class="font-bold text-lg">Ongoing Costs (Client-Managed)</h3>
+                        <p class="text-sm text-brand-muted mt-2">Minimal, scalable expenses using free tiers where possible.</p>
+                        <ul class="text-sm space-y-2 mt-4">
+                            <li><span class="font-semibold">Domain:</span> 100-200 MAD/year (~15 MAD/month)</li>
+                            <li><span class="font-semibold">Hosting (Vercel/DO):</span> 0-250 MAD/month</li>
+                            <li><span class="font-semibold">Database/Email:</span> 0-150 MAD/month</li>
+                            <li><span class="font-semibold">Monitoring (Sentry):</span> 0-100 MAD/month</li>
+                            <li class="font-bold mt-2">Total Estimate: 60-500 MAD/month</li>
+                        </ul>
+                    </div>
+                     <div class="p-6 bg-brand-card border border-brand-border rounded-lg shadow-sm print-no-bg">
+                        <h3 class="font-bold text-lg">Maintenance Plans (Optional)</h3>
+                        <p class="text-sm text-brand-muted mt-2">Recurring support for uptime and enhancements.</p>
+                         <ul class="text-sm space-y-2 mt-4">
+                            <li><span class="font-semibold">Basic (500 MAD/month):</span> 2-5 hours; bugs, updates, backups, monitoring.</li>
+                            <li><span class="font-semibold">Standard (1,200 MAD/month):</span> 6 hours; adds minor features, security patches, reports.</li>
+                            <li><span class="font-semibold">Premium (2,500 MAD/month):</span> 15 hours; priority support, performance tuning, quarterly planning.</li>
+                            <li class="text-xs mt-2">First month free; extras at 160-200 MAD/hour.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+          
+            <!-- Agreement & Next Steps -->
+            <section id="next-steps" class="pt-16 pb-20">
+                 <h2 class="text-4xl font-bold section-title text-center">Agreement & Next Steps</h2>
+                 <div class="mt-10 max-w-2xl mx-auto space-y-6 bg-brand-card border border-brand-border rounded-xl p-8 shadow-sm print-no-bg">
+                    <div>
+                        <h3 class="font-semibold text-lg">Payment Terms</h3>
+                        <p class="text-sm text-brand-muted">Milestone-based for trust: 30% deposit (non-refundable post-kickoff), 40% at Phase 3 demo, 30% on launch. All prices exclude taxes.</p>
+                    </div>
+                     <div>
+                        <h3 class="font-semibold text-lg">Deliverables & Ownership</h3>
+                        <p class="text-sm text-brand-muted">Deployed app on your domain, source code (GitHub), credentials, user manual, training. Full IP transfer post-final payment.</p>
+                    </div>
+                     <div>
+                        <h3 class="font-semibold text-lg">How to Proceed</h3>
+                        <ol class="text-sm text-brand-muted list-decimal list-inside space-y-1 mt-2">
+                            <li>Select package and confirm via email.</li>
+                            <li>Receive contract and deposit invoice.</li>
+                            <li>Sign, pay, and schedule kick-off.</li>
+                        </ol>
+                    </div>
+                 </div>
+                 <div class="mt-12 text-center">
+                    <a href="mailto:oussama@example.com?subject=Accept Restaurant Proposal&body=Hi Oussama, I'd like to proceed with the [Package Name]." class="bg-brand-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block text-lg shadow-md">
+                        Accept & Launch Your Platform
+                    </a>
+                    <p class="text-xs text-brand-muted mt-4">Proposal valid for 30 days. Questions? Contact Oussama at [Your Phone/Email].</p>
+                 </div>
+            </section>
+
+        </main>
+    </div>
+    <script>
+        document.getElementById('print-button').addEventListener('click', () => window.print());
+    </script>
+</body>
+</html>

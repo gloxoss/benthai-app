@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Proposal — Restaurant Ordering Platform (Budget MVP + Rent‑to‑Own)</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              bg: '#F7F8FA',
+              card: '#FFFFFF',
+              border: '#E5E7EB',
+              text: '#0F172A',
+              muted: '#64748B',
+              accent: '#2563EB',
+              soft: '#EFF6FF',
+              success: '#10B981',
+              warn: '#F59E0B',
+              danger: '#EF4444'
+            }
+          },
+          boxShadow: {
+            soft: '0 8px 30px rgba(15,23,42,0.08)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    h2, h3 { scroll-margin-top: 96px; }
+    @media print {
+      #topbar, .no-print, #backToTop { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+      .card, .page { border: none !important; box-shadow: none !important; }
+      .container { max-width: 100% !important; padding: 0 !important; }
+      a[href]:after { content: '' !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-brand.bg text-brand.text font-sans">
+  <!-- Topbar -->
+  <header id="topbar" class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-brand.border">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="h-6 w-6 rounded bg-gradient-to-br from-brand.accent to-blue-400"></div>
+        <div class="leading-tight">
+          <div class="text-[15px] font-semibold tracking-tight">Ordering Platform — Proposal</div>
+          <div class="text-[12px] text-brand.muted">Budget MVP • Multi-Branch • Rent‑to‑Own Option</div>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-brand.muted">
+        <a href="#summary" class="hover:text-brand.text">Summary</a>
+        <a href="#context" class="hover:text-brand.text">Cartway vs Custom</a>
+        <a href="#packages" class="hover:text-brand.text">Packages</a>
+        <a href="#tco" class="hover:text-brand.text">TCO</a>
+        <a href="#scope" class="hover:text-brand.text">Scope</a>
+        <a href="#timeline" class="hover:text-brand.text">Timeline</a>
+        <a href="#maintenance" class="hover:text-brand.text">Maintenance</a>
+        <a href="#assumptions" class="hover:text-brand.text">Assumptions</a>
+        <a href="#next-steps" class="hover:text-brand.text">Next Steps</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="printBtn" class="hidden sm:inline-flex items-center gap-2 bg-brand.accent text-white px-3.5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page -->
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-8 lg:py-12">
+    <!-- Hero -->
+    <section class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8">
+      <div class="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p class="text-sm font-semibold text-brand.accent">Project Proposal & Pricing</p>
+          <h1 class="mt-1 text-3xl md:text-5xl font-extrabold tracking-tight">Commission‑Free Ordering Platform (2 Restaurants)</h1>
+          <p class="mt-3 text-brand.muted max-w-2xl">
+            Custom web ordering with admin, realtime dashboard, and printable PDF tickets. Built to beat or match your current Cartway spend now, then save significantly after ownership.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-brand.soft text-brand.accent border border-blue-100">Budget MVP</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-green-50 text-brand.success border border-green-100">Multi‑Branch</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-gray-50 text-gray-700 border border-gray-200">Rent‑to‑Own</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section id="summary" class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8 mt-6">
+      <h2 class="text-2xl font-bold tracking-tight">Executive Summary</h2>
+      <ul class="mt-4 grid md:grid-cols-2 gap-4 text-[15.5px] text-brand.muted">
+        <li class="p-4 rounded-xl border border-brand.border">Goal: Replace Cartway with an owned platform, keep monthly ≤ current spend (≈640 MAD for 2 restaurants), then drop after ownership.</li>
+        <li class="p-4 rounded-xl border border-brand.border">MVP: Web ordering, admin CRUD, realtime dashboard, 80mm PDF tickets (kitchen/customer), multi‑branch (2 restaurants).</li>
+        <li class="p-4 rounded-xl border border-brand.border">Phase 2: Native Android POS app with 58mm SDK printing and CMI online payments (one‑time add‑ons when needed).</li>
+        <li class="p-4 rounded-xl border border-brand.border">Stack: MERN (MongoDB, Express, React, Node) + WebSockets/Events; VPS hosting to keep monthly low.</li>
+      </ul>
+    </section>
+
+    <!-- Context: Cartway vs Custom -->
+    <section id="context" class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8 mt-6">
+      <h2 class="text-2xl font-bold tracking-tight">Cartway vs Custom (2 Restaurants)</h2>
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-left text-[14.5px] border-separate border-spacing-y-2">
+          <thead>
+            <tr class="text-brand.muted">
+              <th class="px-4 py-2">Aspect</th>
+              <th class="px-4 py-2">Cartway (Current)</th>
+              <th class="px-4 py-2">Custom (This Proposal)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Monthly Cost</td>
+              <td class="px-4 py-3">≈320 MAD/restaurant → ≈640 MAD total</td>
+              <td class="px-4 py-3">≤ 640 MAD (rent‑to‑own), then ≈100–140 MAD after ownership</td>
+            </tr>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Ownership</td>
+              <td class="px-4 py-3">No</td>
+              <td class="px-4 py-3">Yes (code + data)</td>
+            </tr>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Branding & Control</td>
+              <td class="px-4 py-3">Limited</td>
+              <td class="px-4 py-3">Full (design, features, data)</td>
+            </tr>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Printing</td>
+              <td class="px-4 py-3">App‑dependent</td>
+              <td class="px-4 py-3">PDF tickets now; native 58mm printing in Phase 2</td>
+            </tr>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Payments</td>
+              <td class="px-4 py-3">As provided</td>
+              <td class="px-4 py-3">COD now; CMI online payments in Phase 2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-4 p-4 rounded-xl border border-dashed border-brand.border text-[15px] text-brand.muted">
+        Result: Match or beat monthly now, then significantly cheaper after month 24 (ownership). No commissions; full control.
+      </div>
+    </section>
+
+    <!-- Packages -->
+    <section id="packages" class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8 mt-6">
+      <h2 class="text-2xl font-bold tracking-tight">Packages & Pricing (MAD)</h2>
+
+      <div class="mt-5 grid md:grid-cols-3 gap-5">
+        <!-- Option 1 -->
+        <div class="rounded-2xl border-2 border-brand.accent p-6 bg-brand.soft">
+          <div class="text-sm font-semibold text-brand.accent">Option 1 — Rent‑to‑Own Budget MVP (Recommended)</div>
+          <div class="mt-1 text-3xl font-extrabold tracking-tight">≈600–640 / month</div>
+          <p class="mt-2 text-sm text-brand.muted">500 (financed build) + 100–140 hosting for 24 months, then hosting only</p>
+          <ul class="mt-3 space-y-2 text-[15px]">
+            <li>Build cost financed: 12,000 MAD → 500 MAD × 24 months</li>
+            <li>Hosting/ops: 100–140 MAD/month (VPS + domain; DB/email start free)</li>
+            <li>Includes 2 restaurants (single multi‑branch platform)</li>
+          </ul>
+        </div>
+        <!-- Option 2 -->
+        <div class="rounded-2xl border border-brand.border p-6">
+          <div class="text-sm font-semibold text-brand.muted">Option 2 — One‑Time Budget MVP (Lowest TCO)</div>
+          <div class="mt-1 text-3xl font-extrabold tracking-tight">9,000–12,000 (one‑time)</div>
+          <p class="mt-2 text-sm text-brand.muted">+ 100–140 / month hosting</p>
+          <ul class="mt-3 space-y-2 text-[15px]">
+            <li>Immediate monthly ≤ 140 MAD (cheaper than Cartway)</li>
+            <li>Same scope as Option 1 (Budget MVP)</li>
+          </ul>
+        </div>
+        <!-- Option 3 -->
+        <div class="rounded-2xl border border-brand.border p-6">
+          <div class="text-sm font-semibold text-brand.muted">Option 3 — Full MVP (Native POS + CMI now)</div>
+          <div class="mt-1 text-3xl font-extrabold tracking-tight">26,000–32,000 (one‑time)</div>
+          <p class="mt-2 text-sm text-brand.muted">Rent‑to‑own would exceed 640 MAD/month; choose only if mandatory now</p>
+          <ul class="mt-3 space-y-2 text-[15px]">
+            <li>Native Android POS with 58mm SDK printing</li>
+            <li>CMI online payments (hosted page/SDK + callback)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <h3 class="font-semibold">What’s Included in Budget MVP (Options 1 & 2)</h3>
+        <ul class="mt-2 grid md:grid-cols-2 gap-2 text-[15px] text-brand.muted">
+          <li>Customer web app: responsive menu, options, notes, cart, COD checkout</li>
+          <li>Order confirmation + basic live status page</li>
+          <li>Admin: categories/items/images/availability (CRUD)</li>
+          <li>Orders list + status updates; daily totals + CSV export</li>
+          <li>Realtime: web dashboard for incoming orders</li>
+          <li>Tickets: 80mm PDF (kitchen + customer) with print CSS</li>
+          <li>Multi‑branch: manage 2 restaurants in one platform</li>
+          <li>Ops: VPS, domain, backups, monitoring (lean setup)</li>
+        </ul>
+      </div>
+
+      <div class="mt-6">
+        <h3 class="font-semibold">Phase 2 Add‑Ons (One‑Time)</h3>
+        <ul class="mt-2 grid md:grid-cols-2 gap-3 text-[15px]">
+          <li class="p-4 rounded-xl border border-brand.border">Native Android POS + 58mm SDK printing — 8,000–12,000</li>
+          <li class="p-4 rounded-xl border border-brand.border">CMI online payments — 2,500–4,000</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TCO -->
+    <section id="tco" class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8 mt-6">
+      <h2 class="text-2xl font-bold tracking-tight">Total Cost of Ownership (2 Restaurants)</h2>
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-left text-[14.5px] border-separate border-spacing-y-2">
+          <thead>
+            <tr class="text-brand.muted">
+              <th class="px-4 py-2">Option</th>
+              <th class="px-4 py-2">Monthly</th>
+              <th class="px-4 py-2">1 Year</th>
+              <th class="px-4 py-2">2 Years</th>
+              <th class="px-4 py-2">3 Years</th>
+              <th class="px-4 py-2">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Cartway (current)</td>
+              <td class="px-4 py-3">≈640</td>
+              <td class="px-4 py-3">7,680</td>
+              <td class="px-4 py-3">15,360</td>
+              <td class="px-4 py-3">23,040</td>
+              <td class="px-4 py-3">No ownership</td>
+            </tr>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Option 1 — Rent‑to‑Own</td>
+              <td class="px-4 py-3">≈600–640 (months 1–24), then ≈100–140</td>
+              <td class="px-4 py-3">≈7,200–7,680</td>
+              <td class="px-4 py-3">≈14,400–15,360</td>
+              <td class="px-4 py-3">≈15,600–17,040</td>
+              <td class="px-4 py-3">Own it after month 24</td>
+            </tr>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Option 2 — One‑Time</td>
+              <td class="px-4 py-3">≈100–140 hosting</td>
+              <td class="px-4 py-3">9,000–12,000 + 1,200–1,680</td>
+              <td class="px-4 py-3">11,400–15,360</td>
+              <td class="px-4 py-3">12,600–17,040</td>
+              <td class="px-4 py-3">Lowest long‑term cost</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-[13.5px] text-brand.muted">All figures in MAD. Ranges depend on hosting choice. Prices exclude taxes.</p>
+    </section>
+
+    <!-- Scope & Architecture -->
+    <section id="scope" class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8 mt-6">
+      <h2 class="text-2xl font-bold tracking-tight">Architecture & Security (Budget MVP)</h2>
+      <div class="mt-4 grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-semibold">Architecture</h3>
+          <ul class="mt-2 space-y-2 text-[15px] text-brand.muted">
+            <li>Frontend: React SPA (web ordering) + web dashboard</li>
+            <li>Backend: Node.js (Express) REST + realtime events</li>
+            <li>Database: MongoDB (Atlas free tier or VPS)</li>
+            <li>Hosting: VPS (cost‑effective); domain included</li>
+            <li>Media/CDN: object storage for images</li>
+            <li>Printing: browser print (80mm PDF) with print CSS</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold">Security</h3>
+          <ul class="mt-2 space-y-2 text-[15px] text-brand.muted">
+            <li>HTTPS (TLS), HSTS; strong password hashing</li>
+            <li>JWT auth + role‑based access for admin</li>
+            <li>Server‑side pricing and inventory validation</li>
+            <li>Rate limiting, CORS, CSRF protections</li>
+            <li>Automated daily backups; 7–30 day retention</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-semibold">Key Data Collections</h3>
+          <pre class="mt-2 text-[13px] leading-6 p-4 bg-gray-50 rounded-lg border border-brand.border overflow-auto">
+users(id, role, name, email, phone, password_hash, status)
+branches(id, name, address, hours, tax_rules)
+categories(id, branch_id, name, sort)
+items(id, category_id, name, description, price, image_url, options[], active, stock_mode)
+orders(id, code, branch_id, user_id?, items[], totals, payment{method,status,ref?}, status, timeline[], created_at)
+payments(id, order_id, amount, method, status, provider_refs?)
+audit_logs(id, actor_id, action, entity, entity_id, diff, created_at)
+          </pre>
+        </div>
+        <div>
+          <h3 class="font-semibold">Core Endpoints</h3>
+          <div class="mt-2 overflow-x-auto">
+            <table class="w-full text-sm border-separate border-spacing-y-2">
+              <thead>
+                <tr class="text-brand.muted">
+                  <th class="px-3 py-2 text-left font-semibold">Endpoint</th>
+                  <th class="px-3 py-2 text-left font-semibold">Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white rounded-xl shadow"><td class="px-3 py-2">POST /auth/login</td><td class="px-3 py-2">Admin login (JWT)</td></tr>
+                <tr class="bg-white rounded-xl shadow"><td class="px-3 py-2">GET /menu?branch=ID</td><td class="px-3 py-2">Public menu</td></tr>
+                <tr class="bg-white rounded-xl shadow"><td class="px-3 py-2">POST /orders</td><td class="px-3 py-2">Create order (COD, server re‑prices)</td></tr>
+                <tr class="bg-white rounded-xl shadow"><td class="px-3 py-2">GET /admin/orders</td><td class="px-3 py-2">Orders list + filters</td></tr>
+                <tr class="bg-white rounded-xl shadow"><td class="px-3 py-2">PATCH /admin/orders/:id/status</td><td class="px-3 py-2">Advance status + emit events</td></tr>
+                <tr class="bg-white rounded-xl shadow"><td class="px-3 py-2">CRUD /admin/items, /admin/categories</td><td class="px-3 py-2">Menu management</td></tr>
+                <tr class="bg-white rounded-xl shadow"><td class="px-3 py-2">GET /admin/reports/daily</td><td class="px-3 py-2">Daily totals + CSV</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 p-4 rounded-xl border border-dashed border-brand.border">
+        <h3 class="font-semibold">Thermal Tickets (PDF, 80mm)</h3>
+        <ul class="mt-2 text-[15px] text-brand.muted space-y-1">
+          <li>Header: brand, order code, timestamp</li>
+          <li>Body: qty × name, options, notes</li>
+          <li>Totals: subtotal, taxes/fees, grand total, payment method</li>
+          <li>Footer: QR (order tracking URL/code)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline" class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8 mt-6">
+      <h2 class="text-2xl font-bold tracking-tight">6–8 Week Development Plan (Budget MVP)</h2>
+      <ol class="mt-5 grid md:grid-cols-2 gap-4 text-[15px]">
+        <li class="p-4 rounded-xl border border-brand.border">
+          <div class="text-sm font-semibold">Week 1 — Foundations</div>
+          <div class="text-brand.muted">Scope freeze, flows, data model, repos/CI, environments</div>
+        </li>
+        <li class="p-4 rounded-xl border border-brand.border">
+          <div class="text-sm font-semibold">Week 2 — Backend Core</div>
+          <div class="text-brand.muted">Auth/RBAC, menu read, admin CRUD, order pricing logic</div>
+        </li>
+        <li class="p-4 rounded-xl border border-brand.border">
+          <div class="text-sm font-semibold">Week 3 — Realtime + Orders</div>
+          <div class="text-brand.muted">Events/WebSockets, order lifecycle, CSV skeleton</div>
+        </li>
+        <li class="p-4 rounded-xl border border-brand.border">
+          <div class="text-sm font-semibold">Week 4 — Customer Web</div>
+          <div class="text-brand.muted">Menu, options, cart, COD checkout, status page</div>
+        </li>
+        <li class="p-4 rounded-xl border border-brand.border">
+          <div class="text-sm font-semibold">Week 5 — Admin & Tickets</div>
+          <div class="text-brand.muted">Orders dashboard, PDF tickets (80mm), print CSS</div>
+        </li>
+        <li class="p-4 rounded-xl border border-brand.border">
+          <div class="text-sm font-semibold">Week 6 — QA & Deploy</div>
+          <div class="text-brand.muted">Performance, security, backups, monitoring, training</div>
+        </li>
+        <li class="p-4 rounded-xl border border-brand.border">
+          <div class="text-sm font-semibold">Weeks 7–8 — Buffer</div>
+          <div class="text-brand.muted">UAT, fixes, content entry, go‑live</div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Negotiation angles & Acceptance -->
+    <section class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8 mt-6">
+      <h2 class="text-2xl font-bold tracking-tight">Negotiation Angles</h2>
+      <ul class="mt-3 grid md:grid-cols-2 gap-3 text-[15px] text-brand.muted">
+        <li class="p-4 rounded-xl border border-brand.border"><span class="font-semibold">Match/Beat monthly now:</span> Option 1 keeps total ≤ 640 MAD/month, then drops to ~120.</li>
+        <li class="p-4 rounded-xl border border-brand.border"><span class="font-semibold">Ownership:</span> Stop renting after 24 months; own code + data.</li>
+        <li class="p-4 rounded-xl border border-brand.border"><span class="font-semibold">Multi‑branch efficiency:</span> One platform runs both restaurants; ops cost doesn’t double.</li>
+        <li class="p-4 rounded-xl border border-brand.border"><span class="font-semibold">Phased complexity:</span> Launch COD + PDF now; add POS printing + CMI later.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold tracking-tight mt-8">Acceptance Wording</h2>
+      <div class="mt-3 p-4 rounded-xl border border-brand.border bg-gray-50 text-[15px]">
+We choose Option 1 (Rent‑to‑Own Budget MVP) at 500 MAD/month for 24 months plus hosting (100–140 MAD/month), total ≤ 640 MAD/month for 2 restaurants. Scope includes web ordering, admin CRUD, realtime dashboard, and 80mm PDF tickets for both branches. Native POS printing and CMI payments will be added as Phase 2 at the quoted one‑time rates. Prices exclude taxes. Quote valid 30 days.
+      </div>
+    </section>
+
+    <!-- Maintenance -->
+    <section id="maintenance" class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8 mt-6">
+      <h2 class="text-2xl font-bold tracking-tight">Maintenance & Support (Optional)</h2>
+      <div class="mt-5 overflow-x-auto">
+        <table class="w-full text-left text-[14.5px] border-separate border-spacing-y-2">
+          <thead>
+            <tr class="text-brand.muted">
+              <th class="px-4 py-2">Plan</th>
+              <th class="px-4 py-2">Monthly (MAD)</th>
+              <th class="px-4 py-2">Included</th>
+              <th class="px-4 py-2">Support</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Basic</td>
+              <td class="px-4 py-3 font-semibold">300</td>
+              <td class="px-4 py-3">Daily DB backups, uptime monitoring, monthly security patching</td>
+              <td class="px-4 py-3">Email ≤ 48h</td>
+            </tr>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Standard</td>
+              <td class="px-4 py-3 font-semibold">600</td>
+              <td class="px-4 py-3">All Basic + monthly updates, 2h minor changes</td>
+              <td class="px-4 py-3">Email ≤ 24h, Phone (business hours)</td>
+            </tr>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Premium</td>
+              <td class="px-4 py-3 font-semibold">1,200</td>
+              <td class="px-4 py-3">All Standard + 5h changes, monthly performance report, proactive suggestions</td>
+              <td class="px-4 py-3">Priority ≤ 12h</td>
+            </tr>
+            <tr class="bg-white rounded-xl shadow">
+              <td class="px-4 py-3 font-medium">Ad‑hoc</td>
+              <td class="px-4 py-3 font-semibold">—</td>
+              <td class="px-4 py-3">Pay‑as‑you‑go changes at 200 MAD/h</td>
+              <td class="px-4 py-3">On demand</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Assumptions -->
+    <section id="assumptions" class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8 mt-6">
+      <h2 class="text-2xl font-bold tracking-tight">Assumptions</h2>
+      <ul class="mt-3 grid md:grid-cols-2 gap-3 text-[15px] text-brand.muted">
+        <li class="p-4 rounded-xl border border-brand.border">Two restaurants managed in one platform (multi‑branch)</li>
+        <li class="p-4 rounded-xl border border-brand.border">COD at launch; CMI in Phase 2</li>
+        <li class="p-4 rounded-xl border border-brand.border">PDF thermal tickets at launch; native 58mm printing in Phase 2</li>
+        <li class="p-4 rounded-xl border border-brand.border">Client provides branding + menu/photos by Week 2</li>
+        <li class="p-4 rounded-xl border border-brand.border">VPS hosting selected to keep monthly low</li>
+        <li class="p-4 rounded-xl border border-brand.border">Prices exclude taxes; quote valid 30 days</li>
+      </ul>
+    </section>
+
+    <!-- Next Steps -->
+    <section id="next-steps" class="page rounded-2xl border border-brand.border bg-white shadow-soft p-6 md:p-8 mt-6">
+      <h2 class="text-2xl font-bold tracking-tight">Next Steps</h2>
+      <ol class="mt-3 space-y-1.5 text-[15px] text-brand.muted list-decimal list-inside">
+        <li>Pick Option 1 (rent‑to‑own) or Option 2 (one‑time)</li>
+        <li>Confirm any Phase 2 add‑ons needed and timing</li>
+        <li>Share brand assets + menu CSV/images</li>
+        <li>Confirm domain and VPS plan</li>
+        <li>Sign proposal and pay kickoff installment</li>
+      </ol>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="mailto:contact@yourdomain.com?subject=Acceptance — Ordering Platform&body=Hello,%0D%0A%0D%0AWe confirm proceeding with [Option 1 Rent-to-Own / Option 2 One-Time].%0D%0A%0D%0APlease share the contract and initial invoice.%0D%0A%0D%0AThanks," class="inline-flex items-center gap-2 bg-brand.accent text-white px-5 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-[15px] no-print">
+          Accept & Start
+        </a>
+        <button id="printBtn2" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-brand.border hover:bg-gray-50 transition-colors text-[15px] no-print">
+          Print / Save PDF
+        </button>
+      </div>
+    </section>
+
+    <footer class="pt-4 pb-10 text-center text-[13px] text-brand.muted">
+      © <span id="year"></span> Oussama Zaki — Proposal
+    </footer>
+  </div>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="fixed bottom-5 right-5 z-40 p-2.5 rounded-full bg-white border border-brand.border shadow-soft hover:bg-gray-50 hidden no-print" aria-label="Back to top">
+    <svg class="h-5 w-5 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5m0 0l-7 7m7-7l7 7"/></svg>
+  </button>
+
+  <script>
+    const printBtn = document.getElementById('printBtn');
+    const printBtn2 = document.getElementById('printBtn2');
+    [printBtn, printBtn2].forEach(b => b && b.addEventListener('click', () => window.print()));
+
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => backToTop.classList.toggle('hidden', window.scrollY < 300));
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

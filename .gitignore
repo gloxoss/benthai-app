@@ -1,0 +1,12 @@
+﻿# Credentials & Environment
+.env
+*.env.*
+.env.local
+config/.env
+
+# IDE & System
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+*.swp

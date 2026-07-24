@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Proposal: Restaurant Ordering Platform</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-bg': '#F9FAFB',
+                        'brand-card': '#FFFFFF',
+                        'brand-border': '#E5E7EB',
+                        'brand-text': '#111827',
+                        'brand-muted': '#6B7280',
+                        'brand-accent': '#2563EB',
+                        'brand-accent-light': '#EFF6FF',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .section-title { letter-spacing: -0.025em; }
+        @media print {
+            #sidebar, #topbar, #next-steps a { display: none !important; }
+            main { margin: 0 !important; }
+            section {
+                padding: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+             body { background: #fff !important; }
+        }
+    </style>
+</head>
+
+<body class="bg-brand-bg text-brand-text font-sans">
+
+    <!-- Header & Navigation -->
+    <header id="topbar" class="bg-brand-card/80 backdrop-blur-lg sticky top-0 z-40 border-b border-brand-border">
+        <div class="container mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="font-bold text-lg tracking-tight">
+                Project Proposal
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-brand-muted">
+                <a href="#packages" class="hover:text-brand-text">The Plans</a>
+                <a href="#pricing" class="hover:text-brand-text">Pricing</a>
+                <a href="#roadmap" class="hover:text-brand-text">Roadmap</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-12 md:py-20">
+        <main class="max-w-4xl mx-auto">
+
+            <!-- Hero Section -->
+            <section id="overview" class="mb-16 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter section-title mb-4">
+                    A Modern Platform for Your Restaurant
+                </h1>
+                <p class="text-lg md:text-xl text-brand-muted max-w-3xl mx-auto">
+                    This proposal outlines a plan to build you a custom, commission-free ordering application. Below are three carefully crafted packages designed to fit your needs and budget, from getting started to scaling up.
+                </p>
+            </section>
+
+            <!-- Packages Section -->
+            <section id="packages" class="space-y-16">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tighter section-title text-center">Detailed MVP Packages</h2>
+
+                <!-- STARTER MVP -->
+                <div class="p-8 border border-brand-border rounded-xl bg-brand-card">
+                    <h3 class="text-2xl font-bold section-title">Starter MVP</h3>
+                    <p class="text-brand-muted mt-2 mb-6">The essential foundation to get your restaurant online, professionalize your takeaway service, and eliminate errors from phone orders.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="feature-item">
+                            <h4 class="font-semibold">Online Menu & Shopping Cart</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> Gives your customers a beautiful, easy-to-navigate digital menu. They can browse, add items to a cart, and order without pressure, often leading to larger order sizes.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold">Cash on Delivery Order System</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> The simplest way to start accepting online orders. It provides a structured, error-free order record for your kitchen, avoiding misunderstandings from phone calls.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold">Admin Dashboard for Order Management</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> This is your control center. Your cashier can see all incoming orders in one place, accept them, and update their status (e.g., from "Processing" to "Ready for Pickup").
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold">PDF Ticket Printing</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> Creates a standardized, professional ticket for every order. This ensures your kitchen staff gets clear, legible instructions every time, reducing mistakes and speeding up preparation.
+                            </p>
+                        </div>
+                         <div class="feature-item">
+                            <h4 class="font-semibold">Basic Menu Management</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> You have control. If a price changes or you add a new dish, you can update the menu yourself instantly without needing to call a developer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEAN MVP -->
+                <div class="p-8 border-2 border-brand-accent rounded-xl bg-brand-accent-light relative">
+                    <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-brand-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Recommended</div>
+                    <h3 class="text-2xl font-bold section-title">Lean MVP</h3>
+                    <p class="text-brand-muted mt-2 mb-6">Builds on the Starter foundation with automation and enhanced customer experience features, creating a smoother, more professional operation.</p>
+                    
+                    <div class="space-y-4">
+                         <div class="feature-item">
+                            <h4 class="font-bold text-brand-accent">Includes all Starter MVP features, plus:</h4>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold">Real-time Order Dashboard</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> This is a game-changer. Orders appear instantly with a notification sound, no manual refreshing needed. It ensures your staff reacts immediately, crucial during busy hours.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold">Customer Order Tracking Page</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> Reduces customer anxiety and "where is my order?" phone calls. Customers can see the status of their order on their own, improving their experience and freeing up your staff.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold">Automatic Email Confirmations</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> Provides customers with immediate reassurance that their order was received correctly. It's a mark of professionalism that builds trust and provides them with a digital receipt.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold">Basic Sales Analytics Dashboard</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> Turns your sales data into insights. You can instantly see how many orders you've had, your daily revenue, and which items are most popular, helping you make smarter business decisions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPLETE MVP -->
+                <div class="p-8 border border-brand-border rounded-xl bg-brand-card">
+                    <h3 class="text-2xl font-bold section-title">Complete MVP</h3>
+                    <p class="text-brand-muted mt-2 mb-6">The most robust package, designed for restaurants looking to optimize operations, handle more volume, and prepare for future growth.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="feature-item">
+                            <h4 class="font-bold text-gray-500">Includes all Lean MVP features, plus:</h4>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold">Full Multi-language Support (French & Arabic)</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> Caters to all your customers in their preferred language. This improves accessibility and shows a high level of customer care, making your restaurant more welcoming to a wider audience.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold">Admin Role Management</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> Enhances security and control. You can create different user roles, for example, a "Cashier" who can manage orders but not change menu prices, and an "Admin" (you) who has full access.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold">End-of-Day "Z-Report" Generation</h4>
+                            <p class="text-sm text-brand-muted italic">
+                                <strong>Why it's important:</strong> Simplifies your accounting. At the end of a shift or day, you can generate a summary report with one click, showing total sales, number of orders, and other key metrics for easy reconciliation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Summary Section -->
+            <section id="pricing" class="pt-16">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tighter section-title text-center mb-8">Pricing Summary</h2>
+                <div class="max-w-2xl mx-auto overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-brand-border">
+                                <th class="p-4 font-semibold">Package</th>
+                                <th class="p-4 font-semibold text-center">Timeline</th>
+                                <th class="p-4 font-semibold text-right">Price (MAD)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-brand-border">
+                            <tr>
+                                <td class="p-4">Starter MVP</td>
+                                <td class="p-4 text-center text-brand-muted">~6-7 Weeks</td>
+                                <td class="p-4 text-right font-bold text-lg">7,000</td>
+                            </tr>
+                            <tr class="bg-brand-accent-light">
+                                <td class="p-4 font-semibold text-brand-accent">Lean MVP (Recommended)</td>
+                                <td class="p-4 text-center text-brand-muted">8 Weeks</td>
+                                <td class="p-4 text-right font-bold text-lg text-brand-accent">12,000</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4">Complete MVP</td>
+                                <td class="p-4 text-center text-brand-muted">8 Weeks</td>
+                                <td class="p-4 text-right font-bold text-lg">14,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Roadmap Section -->
+            <section id="roadmap" class="pt-16">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tighter section-title text-center mb-8">Our 8-Week Development Roadmap</h2>
+                <p class="text-center text-brand-muted mb-12 max-w-2xl mx-auto">We will work together through a structured, transparent process. Here’s what the journey to launch looks like:</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                        <p class="font-semibold text-sm text-brand-accent">WEEKS 1-2</p>
+                        <h4 class="font-bold text-lg mt-1">Strategic Kick-off & Blueprinting</h4>
+                        <p class="text-sm text-brand-muted mt-2">We'll finalize the plan, create visual wireframes of the app, and set up the technical foundation. This ensures we both agree on the vision before any code is written.</p>
+                    </div>
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                        <p class="font-semibold text-sm text-brand-accent">WEEKS 3-4</p>
+                        <h4 class="font-bold text-lg mt-1">Building the Control Center</h4>
+                        <p class="text-sm text-brand-muted mt-2">I will build the core of the admin dashboard, focusing on the menu management system. You'll be able to start adding your menu items during this phase.</p>
+                    </div>
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                        <p class="font-semibold text-sm text-brand-accent">WEEKS 5-6</p>
+                        <h4 class="font-bold text-lg mt-1">Developing the Customer Experience</h4>
+                        <p class="text-sm text-brand-muted mt-2">This is where the customer-facing app comes to life. I'll build the menu, cart, and checkout flow. We'll be able to place our first test order by the end of this phase.</p>
+                    </div>
+                     <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                        <p class="font-semibold text-sm text-brand-accent">WEEKS 7-8</p>
+                        <h4 class="font-bold text-lg mt-1">Testing, Deployment & Handover</h4>
+                        <p class="text-sm text-brand-muted mt-2">We'll rigorously test every feature, fix any bugs, and deploy the application to your live domain. I will then conduct a training session with you and your staff before the official handover.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Steps -->
+            <section id="next-steps" class="pt-16 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold tracking-tighter section-title mb-4">Ready to Get Started?</h2>
+                 <p class="text-lg text-brand-muted mb-8 max-w-2xl mx-auto">Let's build something great for your restaurant. The next step is to choose the package that best fits your goals and we can begin our collaboration.</p>
+                 <a href="mailto:your-email@example.com?subject=Restaurant App Proposal Acceptance" class="bg-brand-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block">
+                    Accept Proposal & Begin Project
+                </a>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

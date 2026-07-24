@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Proposal: Custom Restaurant Ordering Platform</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-bg': '#F9FAFB',
+                        'brand-card': '#FFFFFF',
+                        'brand-border': '#E5E7EB',
+                        'brand-text': '#111827',
+                        'brand-muted': '#6B7280',
+                        'brand-accent': '#2563EB',
+                        'brand-accent-light': '#EFF6FF',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .section-title { letter-spacing: -0.025em; }
+        h1, h2, h3 { scroll-margin-top: 80px; }
+        @media print {
+            #topbar, #next-steps a, #print-button { display: none !important; }
+            main { margin: 0 !important; }
+            section, div {
+                border: none !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+             body { background: #fff !important; color: #000 !important;}
+             .print-no-bg { background-color: transparent !important; }
+        }
+    </style>
+</head>
+
+<body class="bg-brand-bg text-brand-text font-sans">
+
+    <!-- Header & Navigation -->
+    <header id="topbar" class="bg-brand-card/80 backdrop-blur-lg sticky top-0 z-40 border-b border-brand-border">
+        <div class="container mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="font-bold text-lg tracking-tight">
+                Strategic Proposal
+            </div>
+            <div class="flex items-center gap-4">
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-brand-muted">
+                    <a href="#opportunity" class="hover:text-brand-text">The Opportunity</a>
+                    <a href="#packages" class="hover:text-brand-text">The Plans</a>
+                    <a href="#investment" class="hover:text-brand-text">Investment</a>
+                    <a href="#journey" class="hover:text-brand-text">Our Journey</a>
+                </nav>
+                 <button id="print-button" class="bg-brand-accent text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
+                    Print / Save PDF
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-12 md:py-20">
+        <main class="max-w-4xl mx-auto">
+
+            <!-- Title Section -->
+            <section id="title" class="mb-16">
+                <p class="font-semibold text-brand-accent">PROPOSAL FOR [CLIENT RESTAURANT NAME]</p>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter section-title mt-2">
+                    A Custom Digital Platform to Drive Growth & Efficiency
+                </h1>
+            </section>
+            
+            <!-- Executive Summary -->
+            <section id="summary" class="mb-16">
+                <div class="p-8 bg-brand-card border border-brand-border rounded-xl">
+                    <h2 class="text-2xl font-bold section-title mb-4">Executive Summary</h2>
+                    <div class="space-y-4 text-brand-muted">
+                        <p>The current market demands a seamless digital experience for restaurant customers. Relying on phone orders leads to errors and inefficiencies, while third-party delivery apps erode profit margins with commissions of up to 35%.</p>
+                        <p>This proposal outlines the development of a bespoke, commission-free web ordering platform. This platform is not just a tool, but a business asset that will <span class="font-semibold text-brand-text">reduce operational overhead, eliminate ordering errors, increase average order value, and build a direct, valuable relationship with your customers.</span></p>
+                        <p>We will achieve this through a phased, 8-week development plan, resulting in a modern, reliable, and scalable application tailored to your specific needs. This document details three distinct MVP packages, the collaborative development journey, and a clear investment overview.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Opportunity -->
+            <section id="opportunity" class="mb-16">
+                 <h2 class="text-3xl font-bold section-title mb-6">The Opportunity: Taking Control of Your Digital Storefront</h2>
+                 <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                        <h3 class="font-bold text-lg">Keep 100% of Your Profits</h3>
+                        <p class="text-sm text-brand-muted mt-2">Every dirham from every order goes directly to you. Eliminate commission fees forever and significantly boost your net income.</p>
+                    </div>
+                     <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                        <h3 class="font-bold text-lg">Own Your Customer Data</h3>
+                        <p class="text-sm text-brand-muted mt-2">Understand your customers' ordering habits. Build a direct marketing channel through email that you control, not a third-party app.</p>
+                    </div>
+                     <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                        <h3 class="font-bold text-lg">Enhance Your Brand</h3>
+                        <p class="text-sm text-brand-muted mt-2">A custom, professional platform elevates your brand image beyond the templated look of delivery apps, fostering customer loyalty.</p>
+                    </div>
+                 </div>
+            </section>
+            
+             <!-- Our Philosophy -->
+            <section id="philosophy" class="mb-16">
+                 <h2 class="text-3xl font-bold section-title mb-6">Our Guiding Philosophy</h2>
+                 <div class="space-y-4">
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                        <h3 class="font-semibold">Business-First Approach</h3>
+                        <p class="text-sm text-brand-muted mt-1">Technology is a tool to solve business problems. Every feature we build will be directly tied to a goal: increasing revenue, improving efficiency, or enhancing customer satisfaction.</p>
+                    </div>
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                        <h3 class="font-semibold">Pragmatic & Modern Technology</h3>
+                        <p class="text-sm text-brand-muted mt-1">We will use a modern, reliable tech stack (Next.js, Supabase) that is fast, secure, and scalable. This ensures low running costs and a platform that can grow with your business without expensive rewrites.</p>
+                    </div>
+                    <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                        <h3 class="font-semibold">A Transparent Partnership</h3>
+                        <p class="text-sm text-brand-muted mt-1">You will be involved throughout the entire process with weekly check-ins and clear milestones. There will be no surprises, and you will have full visibility into the progress of your project.</p>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Packages Section -->
+            <section id="packages" class="space-y-12">
+                <h2 class="text-4xl font-bold section-title text-center">In-Depth Package Exploration</h2>
+
+                <!-- STARTER MVP -->
+                <div class="p-8 border border-brand-border rounded-xl bg-brand-card print-no-bg">
+                    <h3 class="text-2xl font-bold section-title">Plan 1: The Starter MVP</h3>
+                    <p class="font-semibold mt-2">Who is this for? The restaurant owner who wants to immediately professionalize their takeaway process, eliminate phone order errors, and establish a digital presence.</p>
+                    <p class="text-brand-muted mt-1">Core Objective: To build the essential foundation for online ordering.</p>
+                    <div class="mt-6 border-t border-brand-border pt-6 space-y-5">
+                        <div class="feature-item">
+                            <h4 class="font-semibold text-lg">Feature: Digital Menu & Shopping Cart</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">What it is:</span> A beautiful, responsive webpage showcasing your menu with categories, item descriptions, and prices. Customers can easily add items to a virtual cart.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Business Impact:</span> Moves your menu from a static PDF to an interactive experience. Visual menus encourage upselling and often lead to a 15-20% increase in average order value compared to phone orders.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold text-lg">Feature: Admin Dashboard & Order Management</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">What it is:</span> A secure, password-protected area for your staff to view a list of all incoming orders. They can accept an order and update its status (e.g., "Processing," "Ready").</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Business Impact:</span> Centralizes your entire takeaway workflow. Eliminates lost paper tickets and misheard phone orders, drastically reducing food waste and costly mistakes.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold text-lg">Feature: PDF Ticket Printing</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">What it is:</span> A function in the dashboard to generate a standardized 80mm receipt for any order, ready to be printed on a thermal printer.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Business Impact:</span> Standardizes communication with your kitchen. Every chef sees the exact same clear, legible format, ensuring order accuracy and speeding up preparation times.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEAN MVP -->
+                <div class="p-8 border-2 border-brand-accent rounded-xl bg-brand-accent-light print-no-bg relative">
+                    <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-brand-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Recommended</div>
+                    <h3 class="text-2xl font-bold section-title">Plan 2: The Lean MVP</h3>
+                    <p class="font-semibold mt-2">Who is this for? The business owner focused on operational efficiency and a superior customer experience.</p>
+                    <p class="text-brand-muted mt-1">Core Objective: To automate key processes and build customer trust.</p>
+                    <div class="mt-6 border-t border-brand-accent/50 pt-6 space-y-5">
+                        <div class="feature-item"><h4 class="font-bold text-brand-accent">Includes all Starter MVP features, plus:</h4></div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold text-lg">Feature Upgrade: Real-time Order Dashboard</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">What it is:</span> Orders appear on the admin screen instantly with a notification sound, without needing to refresh the page.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Business Impact:</span> This is the heart of an efficient operation. It allows your staff to react immediately to new orders, significantly reducing customer wait times and improving kitchen throughput during peak hours.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold text-lg">Feature: Customer Order Tracking Page</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">What it is:</span> A unique page for customers to see the live status of their order after placing it.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Business Impact:</span> Builds immense customer trust and reduces inbound "where is my order?" phone calls by over 80%. A better customer experience leads to more repeat business.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold text-lg">Feature: Basic Sales Analytics</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">What it is:</span> A dashboard page showing key metrics: daily revenue, total orders, and your most popular menu items.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Business Impact:</span> Empowers you to make data-driven decisions. Identify your star performers to run promotions, or spot unpopular items that could be removed from the menu to reduce costs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPLETE MVP -->
+                <div class="p-8 border border-brand-border rounded-xl bg-brand-card print-no-bg">
+                    <h3 class="text-2xl font-bold section-title">Plan 3: The Complete MVP</h3>
+                    <p class="font-semibold mt-2">Who is this for? The forward-thinking owner who wants maximum operational control, security, and a platform ready for future expansion.</p>
+                    <p class="text-brand-muted mt-1">Core Objective: To optimize management workflow and cater to a broader audience.</p>
+                    <div class="mt-6 border-t border-brand-border pt-6 space-y-5">
+                        <div class="feature-item"><h4 class="font-bold text-gray-500">Includes all Lean MVP features, plus:</h4></div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold text-lg">Feature: Full Multi-language Support</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">What it is:</span> The entire customer-facing application will be available in both French and Arabic, with an easy toggle for users.</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Business Impact:</span> Maximizes your addressable market. It makes your platform accessible and welcoming to all customer segments, which can directly translate to increased sales.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4 class="font-semibold text-lg">Feature: User Role Management</h4>
+                            <p class="text-sm text-brand-text mt-1"><span class="font-semibold">What it is:</span> The ability to create different types of admin accounts with different permissions (e.g., a "Cashier" role that can only manage orders vs. an "Admin" role that can change prices).</p>
+                            <p class="text-sm text-brand-muted mt-1"><span class="font-semibold">Business Impact:</span> Enhances security and accountability. You can give staff access only to the tools they need, preventing accidental changes to critical settings like menu pricing.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Investment -->
+            <section id="investment" class="pt-16">
+                 <h2 class="text-4xl font-bold section-title text-center">Your Investment</h2>
+                 <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto">A one-time investment for a permanent business asset. Below is a clear comparison of the features included in each plan.</p>
+                 <div class="bg-brand-card border border-brand-border rounded-xl overflow-x-auto print-no-bg">
+                    <table class="w-full text-sm">
+                        <thead>
+                             <tr class="border-b border-brand-border">
+                                <th class="p-4 text-left font-semibold text-lg">Feature</th>
+                                <th class="p-4 text-center font-semibold">Starter<p class="text-xs font-normal text-brand-muted">7,000 MAD</p></th>
+                                <th class="p-4 text-center font-semibold text-brand-accent">Lean<p class="text-xs font-normal text-brand-muted">12,000 MAD</p></th>
+                                <th class="p-4 text-center font-semibold">Complete<p class="text-xs font-normal text-brand-muted">14,500 MAD</p></th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-brand-border">
+                            <!-- Core Features -->
+                            <tr><td class="p-3 pl-6 font-semibold" colspan="4">Core Platform</td></tr>
+                            <tr><td class="p-3 pl-8">Digital Menu & Cart</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Admin Dashboard</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">80mm Ticket Printing</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Menu Management</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <!-- Automation & Experience -->
+                            <tr class="bg-brand-bg"><td class="p-3 pl-6 font-semibold" colspan="4">Automation & Experience</td></tr>
+                            <tr><td class="p-3 pl-8">Real-time Order Updates</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Customer Order Tracking</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <tr><td class="p-3 pl-8">Email Confirmations</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                            <!-- Analytics & Control -->
+                             <tr class="bg-brand-bg"><td class="p-3 pl-6 font-semibold" colspan="4">Analytics & Control</td></tr>
+                             <tr><td class="p-3 pl-8">Basic Sales Analytics</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                             <tr><td class="p-3 pl-8">Multi-language (FR/AR)</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center font-bold">✓</td></tr>
+                             <tr><td class="p-3 pl-8">User Role Management</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center font-bold">✓</td></tr>
+                        </tbody>
+                    </table>
+                 </div>
+            </section>
+
+            <!-- Roadmap Section -->
+            <section id="journey" class="pt-16">
+                <h2 class="text-4xl font-bold section-title text-center">The Journey: Our 8-Week Collaborative Roadmap</h2>
+                <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto">This project is a partnership. Here is a breakdown of the development phases and how we will work together to ensure success.</p>
+                <div class="border-l-2 border-brand-accent space-y-10 pl-8">
+                    <div>
+                        <h3 class="text-xl font-bold">Phase 1 (Weeks 1-2): The Blueprint</h3>
+                        <p class="text-sm font-semibold text-brand-muted mt-2">Goal: To create a perfect, shared understanding of the project before development begins.</p>
+                        <p class="text-sm mt-2"><span class="font-semibold">My Role:</span> I will conduct a deep-dive workshop, create visual wireframes, and design the database structure.</p>
+                        <p class="text-sm mt-1"><span class="font-semibold">Your Role:</span> Provide feedback on the wireframes and confirm the final feature list for the chosen plan.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Phase 2 (Weeks 3-4): Building the Engine</h3>
+                        <p class="text-sm font-semibold text-brand-muted mt-2">Goal: To build the secure and powerful admin area of your platform.</p>
+                        <p class="text-sm mt-2"><span class="font-semibold">My Role:</span> I will develop the menu management system and the core order processing logic.</p>
+                        <p class="text-sm mt-1"><span class="font-semibold">Your Role:</span> Begin populating your menu with items, prices, and images via the admin panel I provide.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Phase 3 (Weeks 5-6): Crafting the Customer Experience</h3>
+                         <p class="text-sm font-semibold text-brand-muted mt-2">Goal: To build the beautiful, intuitive, and fast customer-facing website.</p>
+                        <p class="text-sm mt-2"><span class="font-semibold">My Role:</span> I will develop the public menu, shopping cart, and checkout flow, connecting it all to the admin dashboard.</p>
+                        <p class="text-sm mt-1"><span class="font-semibold">Your Role:</span> Participate in a mid-project demo and provide feedback on the user experience.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Phase 4 (Weeks 7-8): Launch Readiness</h3>
+                        <p class="text-sm font-semibold text-brand-muted mt-2">Goal: To ensure the platform is bug-free, robust, and ready for your first real customer.</p>
+                        <p class="text-sm mt-2"><span class="font-semibold">My Role:</span> I will conduct extensive testing, deploy the application to your domain, and set up monitoring.</p>
+                        <p class="text-sm mt-1"><span class="font-semibold">Your Role:</span> Participate in final user acceptance testing (UAT) and a staff training session.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Life After Launch -->
+            <section id="after-launch" class="pt-16">
+                <h2 class="text-4xl font-bold section-title text-center">Life After Launch: Support & Growth</h2>
+                <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto">Launching your platform is just the beginning. Here is what to expect for ongoing costs and support options to ensure your investment continues to perform.</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                     <div class="p-6 bg-brand-card border border-brand-border rounded-lg print-no-bg">
+                        <h3 class="font-bold text-lg">Ongoing Operational Costs</h3>
+                        <p class="text-sm text-brand-muted mt-2">These are the minimal third-party costs required to keep your site online. We use services with generous free tiers to keep these as low as possible.</p>
+                        <ul class="text-sm space-y-2 mt-4">
+                            <li><span class="font-semibold">Domain:</span> ~15 MAD/month</li>
+                            <li><span class="font-semibold">Hosting/Database:</span> 0 - 250 MAD/month (scales with traffic)</li>
+                            <li class="font-bold mt-2">Typical Total: 60 - 300 MAD/month</li>
+                        </ul>
+                    </div>
+                     <div class="p-6 bg-brand-card border border-brand-border rounded-lg print-no-bg">
+                        <h3 class="font-bold text-lg">Ongoing Support & Growth (Optional)</h3>
+                        <p class="text-sm text-brand-muted mt-2">For total peace of mind and future development, I offer monthly support retainers.</p>
+                         <ul class="text-sm space-y-2 mt-4">
+                            <li><span class="font-semibold">Security & Stability (500 MAD/mo):</span> Includes hosting monitoring, security updates, and bug fixes.</li>
+                            <li><span class="font-semibold">Growth Partner (1,200 MAD/mo):</span> Includes the above, plus support for minor feature tweaks and monthly analytics reviews.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Agreement & Next Steps -->
+            <section id="next-steps" class="pt-16">
+                 <h2 class="text-4xl font-bold section-title text-center">Agreement & Next Steps</h2>
+                 <div class="mt-10 max-w-2xl mx-auto space-y-6 bg-brand-card border border-brand-border rounded-xl p-8 print-no-bg">
+                    <div>
+                        <h3 class="font-semibold">Payment Terms</h3>
+                        <p class="text-sm text-brand-muted">A 3-part structure to align payments with project progress: <br> • <strong>30% Deposit</strong> to begin <br> • <strong>40%</strong> at the Phase 3 demo <br> • <strong>30%</strong> upon final delivery</p>
+                    </div>
+                     <div>
+                        <h3 class="font-semibold">Deliverables</h3>
+                        <p class="text-sm text-brand-muted">You will receive the fully deployed web application, complete source code, admin credentials, and a 1-hour training session.</p>
+                    </div>
+                     <div>
+                        <h3 class="font-semibold text-lg">How to Begin</h3>
+                        <ol class="text-sm text-brand-muted list-decimal list-inside space-y-1 mt-2">
+                            <li>Confirm which package you would like to proceed with.</li>
+                            <li>I will send a formal contract and the initial invoice for the 30% deposit.</li>
+                            <li>Once signed and paid, we will schedule our Phase 1 kick-off meeting.</li>
+                        </ol>
+                    </div>
+                 </div>
+                 <div class="mt-12 text-center">
+                    <a href="mailto:your-email@example.com?subject=Restaurant App Proposal Acceptance" class="bg-brand-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block text-lg">
+                        Accept & Start Project
+                    </a>
+                    <p class="text-xs text-brand-muted mt-4">This proposal is valid for 30 days.</p>
+                 </div>
+            </section>
+
+        </main>
+    </div>
+    <script>
+        document.getElementById('print-button').addEventListener('click', () => window.print());
+    </script>
+</body>
+</html>

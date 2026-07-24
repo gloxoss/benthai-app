@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Strategic Proposal: Custom Restaurant Ordering Platform</title>
+  <meta name="description" content="Ultra-detailed bilingual proposal for a restaurant online ordering platform, covering strategic objectives, in-depth package comparisons, a collaborative roadmap, and full technical specifications." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'brand-bg': '#F9FAFB',
+            'brand-card': '#FFFFFF',
+            'brand-border': '#E5E7EB',
+            'brand-text': '#111827',
+            'brand-muted': '#6B7280',
+            'brand-accent': '#2563EB',
+            'brand-accent-light': '#EFF6FF',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .section-title { letter-spacing: -0.025em; }
+    h1, h2, h3, h4 { scroll-margin-top: 80px; }
+    .lang-en, .lang-fr { transition: opacity 0.3s ease; }
+    @media print {
+      #topbar, #next-steps a, #print-button { display: none !important; }
+      main { margin: 0 !important; }
+      section, div {
+        border: none !important; box-shadow: none !important; page-break-inside: avoid;
+      }
+      body { background: #fff !important; color: #000 !important;}
+      .print-no-bg { background-color: transparent !important; }
+      .lang-fr { display: none !important; } /* Default to printing English */
+    }
+  </style>
+</head>
+
+<body class="bg-brand-bg text-brand-text font-sans">
+
+  <!-- Header & Navigation -->
+  <header id="topbar" class="bg-brand-card/80 backdrop-blur-lg sticky top-0 z-40 border-b border-brand-border">
+    <div class="container mx-auto px-6 h-16 flex justify-between items-center">
+      <div class="font-bold text-lg tracking-tight">
+        <span class="lang-en">Strategic Proposal</span>
+        <span class="lang-fr hidden">Proposition Stratégique</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <nav class="hidden md:flex space-x-8 text-sm font-medium text-brand-muted">
+          <a href="#packages" class="hover:text-brand-text">
+            <span class="lang-en">The Plans</span><span class="lang-fr hidden">Les Forfaits</span>
+          </a>
+          <a href="#investment" class="hover:text-brand-text">
+            <span class="lang-en">Investment</span><span class="lang-fr hidden">Investissement</span>
+          </a>
+          <a href="#journey" class="hover:text-brand-text">
+            <span class="lang-en">Our Journey</span><span class="lang-fr hidden">Notre Parcours</span>
+          </a>
+        </nav>
+        <div class="flex items-center border border-brand-border rounded-lg p-0.5 bg-brand-bg">
+            <button id="lang-en-btn" class="px-2 py-1 text-xs font-semibold rounded-md">EN</button>
+            <button id="lang-fr-btn" class="px-2 py-1 text-xs font-semibold rounded-md">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container mx-auto px-6 py-12 md:py-20">
+    <main class="max-w-4xl mx-auto">
+
+      <!-- Title Section -->
+      <section id="title" class="mb-16">
+        <p class="font-semibold text-brand-accent">
+            <span class="lang-en">PROPOSAL FOR [CLIENT RESTAURANT NAME]</span>
+            <span class="lang-fr hidden">PROPOSITION POUR [NOM DU RESTAURANT CLIENT]</span>
+        </p>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter section-title mt-2">
+          <span class="lang-en">A Custom Digital Platform to Drive Growth & Efficiency</span>
+          <span class="lang-fr hidden">Une Plateforme Numérique sur Mesure pour la Croissance et l'Efficacité</span>
+        </h1>
+      </section>
+      
+      <!-- Executive Summary -->
+      <section id="summary" class="mb-16">
+        <div class="p-8 bg-brand-card border border-brand-border rounded-xl">
+          <h2 class="text-2xl font-bold section-title mb-4">
+            <span class="lang-en">Executive Summary</span><span class="lang-fr hidden">Synthèse</span>
+          </h2>
+          <div class="space-y-4 text-brand-muted">
+            <p>
+              <span class="lang-en">The current market demands a seamless digital experience. Relying on phone orders leads to errors, while third-party apps erode profit margins with commissions up to 35%.</span>
+              <span class="lang-fr hidden">Le marché actuel exige une expérience numérique fluide. Dépendre des commandes téléphoniques entraîne des erreurs, tandis que les applications tierces érodent les marges avec des commissions allant jusqu'à 35%.</span>
+            </p>
+            <p>
+              <span class="lang-en">This proposal outlines the development of a bespoke, commission-free platform. This is a business asset that will <span class="font-semibold text-brand-text">reduce overhead, eliminate errors, increase order value, and build a direct relationship with your customers.</span></span>
+              <span class="lang-fr hidden">Cette proposition décrit le développement d'une plateforme sur mesure et sans commission. C'est un actif commercial qui va <span class="font-semibold text-brand-text">réduire les frais, éliminer les erreurs, augmenter la valeur des commandes et créer une relation directe avec vos clients.</span></span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Opportunity -->
+      <section id="opportunity" class="mb-16">
+         <h2 class="text-3xl font-bold section-title mb-6">
+            <span class="lang-en">The Opportunity: Taking Control</span><span class="lang-fr hidden">L'Opportunité : Reprendre le Contrôle</span>
+         </h2>
+         <div class="grid md:grid-cols-3 gap-6 text-center">
+            <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+              <h3 class="font-bold text-lg"><span class="lang-en">Keep 100% Profits</span><span class="lang-fr hidden">Gardez 100% des Profits</span></h3>
+              <p class="text-sm text-brand-muted mt-2"><span class="lang-en">Eliminate commission fees forever and significantly boost your net income.</span><span class="lang-fr hidden">Éliminez les commissions pour toujours et augmentez considérablement votre revenu net.</span></p>
+            </div>
+             <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+              <h3 class="font-bold text-lg"><span class="lang-en">Own Your Customers</span><span class="lang-fr hidden">Possédez vos Données Client</span></h3>
+              <p class="text-sm text-brand-muted mt-2"><span class="lang-en">Build a direct marketing channel you control, not a third-party app.</span><span class="lang-fr hidden">Créez un canal de marketing direct que vous contrôlez, pas une application tierce.</span></p>
+            </div>
+             <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+              <h3 class="font-bold text-lg"><span class="lang-en">Enhance Your Brand</span><span class="lang-fr hidden">Améliorez votre Marque</span></h3>
+              <p class="text-sm text-brand-muted mt-2"><span class="lang-en">A custom, professional platform elevates your brand image and fosters customer loyalty.</span><span class="lang-fr hidden">Une plateforme professionnelle sur mesure rehausse votre image et fidélise la clientèle.</span></p>
+            </div>
+         </div>
+      </section>
+      
+       <!-- Packages Section -->
+      <section id="packages" class="space-y-12">
+        <h2 class="text-4xl font-bold section-title text-center">
+            <span class="lang-en">In-Depth Package Exploration</span><span class="lang-fr hidden">Exploration Détaillée des Forfaits</span>
+        </h2>
+
+        <!-- STARTER MVP -->
+        <div class="p-8 border border-brand-border rounded-xl bg-brand-card print-no-bg">
+          <h3 class="text-2xl font-bold section-title"><span class="lang-en">Plan 1: The Starter MVP</span><span class="lang-fr hidden">Forfait 1 : Le MVP de Démarrage</span></h3>
+          <p class="font-semibold mt-2"><span class="lang-en">Who is this for?</span><span class="lang-fr hidden">Pour qui ?</span></p>
+          <p class="text-brand-muted"><span class="lang-en">The owner who wants to immediately professionalize their takeaway process and eliminate phone order errors.</span><span class="lang-fr hidden">Le propriétaire qui veut immédiatement professionnaliser son service à emporter et éliminer les erreurs des commandes téléphoniques.</span></p>
+          <div class="mt-6 border-t border-brand-border pt-6 space-y-5">
+            <div class="feature-item">
+              <h4 class="font-semibold text-lg"><span class="lang-en">Feature: Digital Menu & Cart</span><span class="lang-fr hidden">Fonctionnalité : Menu Numérique et Panier</span></h4>
+              <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">What it is:</span><span class="lang-fr hidden">Qu'est-ce que c'est :</span></span> <span class="lang-en">A beautiful, responsive webpage showcasing your menu.</span><span class="lang-fr hidden">Une belle page web responsive présentant votre menu.</span></p>
+              <p class="text-sm text-brand-muted mt-1"><span class="font-semibold"><span class="lang-en">Business Impact:</span><span class="lang-fr hidden">Impact Commercial :</span></span> <span class="lang-en">Moves your menu from a static PDF to an interactive experience, increasing average order value.</span><span class="lang-fr hidden">Transforme votre menu d'un PDF statique en une expérience interactive, augmentant la valeur moyenne des commandes.</span></p>
+            </div>
+            <div class="feature-item">
+              <h4 class="font-semibold text-lg"><span class="lang-en">Feature: Admin Dashboard</span><span class="lang-fr hidden">Fonctionnalité : Tableau de Bord Admin</span></h4>
+              <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">What it is:</span><span class="lang-fr hidden">Qu'est-ce que c'est :</span></span> <span class="lang-en">A secure area for staff to view and manage incoming orders.</span><span class="lang-fr hidden">Un espace sécurisé pour le personnel pour voir et gérer les commandes entrantes.</span></p>
+              <p class="text-sm text-brand-muted mt-1"><span class="font-semibold"><span class="lang-en">Business Impact:</span><span class="lang-fr hidden">Impact Commercial :</span></span> <span class="lang-en">Centralizes your takeaway workflow, drastically reducing errors and food waste.</span><span class="lang-fr hidden">Centralise votre flux de travail à emporter, réduisant considérablement les erreurs et le gaspillage.</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LEAN MVP -->
+        <div class="p-8 border-2 border-brand-accent rounded-xl bg-brand-accent-light print-no-bg relative">
+          <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-brand-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider"><span class="lang-en">Recommended</span><span class="lang-fr hidden">Recommandé</span></div>
+          <h3 class="text-2xl font-bold section-title"><span class="lang-en">Plan 2: The Lean MVP</span><span class="lang-fr hidden">Forfait 2 : Le MVP Essentiel</span></h3>
+          <p class="font-semibold mt-2"><span class="lang-en">Who is this for?</span><span class="lang-fr hidden">Pour qui ?</span></p>
+          <p class="text-brand-muted"><span class="lang-en">The business owner focused on operational efficiency and a superior customer experience.</span><span class="lang-fr hidden">Le propriétaire d'entreprise axé sur l'efficacité opérationnelle et une expérience client supérieure.</span></p>
+          <div class="mt-6 border-t border-brand-accent/50 pt-6 space-y-5">
+            <div class="feature-item"><h4 class="font-bold text-brand-accent"><span class="lang-en">Includes all Starter MVP features, plus:</span><span class="lang-fr hidden">Inclut toutes les fonctionnalités du MVP de Démarrage, plus :</span></h4></div>
+            <div class="feature-item">
+              <h4 class="font-semibold text-lg"><span class="lang-en">Upgrade: Real-time Dashboard</span><span class="lang-fr hidden">Amélioration : Tableau de Bord en Temps Réel</span></h4>
+              <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">What it is:</span><span class="lang-fr hidden">Qu'est-ce que c'est :</span></span> <span class="lang-en">Orders appear instantly with a notification sound, no refresh needed.</span><span class="lang-fr hidden">Les commandes apparaissent instantanément avec une notification sonore, sans rafraîchissement.</span></p>
+              <p class="text-sm text-brand-muted mt-1"><span class="font-semibold"><span class="lang-en">Business Impact:</span><span class="lang-fr hidden">Impact Commercial :</span></span> <span class="lang-en">Allows immediate reaction to new orders, reducing customer wait times and improving kitchen throughput.</span><span class="lang-fr hidden">Permet une réaction immédiate aux nouvelles commandes, réduisant les temps d'attente et améliorant le débit en cuisine.</span></p>
+            </div>
+            <div class="feature-item">
+              <h4 class="font-semibold text-lg"><span class="lang-en">Feature: Customer Order Tracking</span><span class="lang-fr hidden">Fonctionnalité : Suivi de Commande Client</span></h4>
+              <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">What it is:</span><span class="lang-fr hidden">Qu'est-ce que c'est :</span></span> <span class="lang-en">A page for customers to see the live status of their order.</span><span class="lang-fr hidden">Une page permettant aux clients de voir le statut en direct de leur commande.</span></p>
+              <p class="text-sm text-brand-muted mt-1"><span class="font-semibold"><span class="lang-en">Business Impact:</span><span class="lang-fr hidden">Impact Commercial :</span></span> <span class="lang-en">Builds trust and reduces "where is my order?" calls, freeing up your staff.</span><span class="lang-fr hidden">Renforce la confiance et réduit les appels "où est ma commande ?", libérant votre personnel.</span></p>
+            </div>
+            <div class="feature-item">
+              <h4 class="font-semibold text-lg"><span class="lang-en">Feature: Basic Sales Analytics</span><span class="lang-fr hidden">Fonctionnalité : Analyses de Ventes de Base</span></h4>
+              <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">What it is:</span><span class="lang-fr hidden">Qu'est-ce que c'est :</span></span> <span class="lang-en">A dashboard showing daily revenue, total orders, and most popular items.</span><span class="lang-fr hidden">Un tableau de bord montrant le revenu quotidien, le total des commandes et les articles les plus populaires.</span></p>
+              <p class="text-sm text-brand-muted mt-1"><span class="font-semibold"><span class="lang-en">Business Impact:</span><span class="lang-fr hidden">Impact Commercial :</span></span> <span class="lang-en">Empowers you to make data-driven decisions about promotions and menu engineering.</span><span class="lang-fr hidden">Vous permet de prendre des décisions basées sur les données pour les promotions et l'ingénierie du menu.</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Investment -->
+      <section id="investment" class="pt-16">
+         <h2 class="text-4xl font-bold section-title text-center"><span class="lang-en">Your Investment</span><span class="lang-fr hidden">Votre Investissement</span></h2>
+         <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto"><span class="lang-en">A one-time investment for a permanent business asset. Below is a clear comparison of the features included in each plan.</span><span class="lang-fr hidden">Un investissement unique pour un actif commercial permanent. Voici une comparaison claire des fonctionnalités de chaque forfait.</span></p>
+         <div class="bg-brand-card border border-brand-border rounded-xl overflow-x-auto print-no-bg">
+            <table class="w-full text-sm">
+                <thead>
+                     <tr class="border-b border-brand-border">
+                        <th class="p-4 text-left font-semibold text-lg"><span class="lang-en">Feature</span><span class="lang-fr hidden">Fonctionnalité</span></th>
+                        <th class="p-4 text-center font-semibold"><span class="lang-en">Starter</span><span class="lang-fr hidden">Démarrage</span><p class="text-xs font-normal text-brand-muted">7,000 MAD</p></th>
+                        <th class="p-4 text-center font-semibold text-brand-accent"><span class="lang-en">Lean</span><span class="lang-fr hidden">Essentiel</span><p class="text-xs font-normal text-brand-muted">12,000 MAD</p></th>
+                        <th class="p-4 text-center font-semibold"><span class="lang-en">Complete</span><span class="lang-fr hidden">Complet</span><p class="text-xs font-normal text-brand-muted">14,500 MAD</p></th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-brand-border">
+                    <!-- Core Features -->
+                    <tr><td class="p-3 pl-6 font-semibold" colspan="4"><span class="lang-en">Core Platform</span><span class="lang-fr hidden">Plateforme de Base</span></td></tr>
+                    <tr><td class="p-3 pl-8"><span class="lang-en">Digital Menu & Cart</span><span class="lang-fr hidden">Menu Numérique & Panier</span></td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                    <tr><td class="p-3 pl-8"><span class="lang-en">Admin Dashboard</span><span class="lang-fr hidden">Tableau de Bord Admin</span></td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                    <tr><td class="p-3 pl-8"><span class="lang-en">80mm Ticket Printing</span><span class="lang-fr hidden">Impression Ticket 80mm</span></td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td><td class="p-3 text-center">✓</td></tr>
+                    <!-- Automation & Experience -->
+                    <tr class="bg-brand-bg print-no-bg"><td class="p-3 pl-6 font-semibold" colspan="4"><span class="lang-en">Automation & Experience</span><span class="lang-fr hidden">Automatisation & Expérience</span></td></tr>
+                    <tr><td class="p-3 pl-8"><span class="lang-en">Real-time Order Updates</span><span class="lang-fr hidden">Mises à Jour en Temps Réel</span></td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                    <tr><td class="p-3 pl-8"><span class="lang-en">Customer Order Tracking</span><span class="lang-fr hidden">Suivi de Commande Client</span></td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                    <!-- Analytics & Control -->
+                     <tr class="bg-brand-bg print-no-bg"><td class="p-3 pl-6 font-semibold" colspan="4"><span class="lang-en">Analytics & Control</span><span class="lang-fr hidden">Analyses & Contrôle</span></td></tr>
+                     <tr><td class="p-3 pl-8"><span class="lang-en">Basic Sales Analytics</span><span class="lang-fr hidden">Analyses de Ventes</span></td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-accent font-bold">✓</td><td class="p-3 text-center">✓</td></tr>
+                     <tr><td class="p-3 pl-8"><span class="lang-en">User Role Management</span><span class="lang-fr hidden">Gestion des Rôles</span></td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center text-brand-muted">-</td><td class="p-3 text-center font-bold">✓</td></tr>
+                </tbody>
+            </table>
+         </div>
+    </section>
+
+      <!-- Roadmap Section -->
+      <section id="journey" class="pt-16">
+        <h2 class="text-4xl font-bold section-title text-center"><span class="lang-en">The Journey: Our 8-Week Collaborative Roadmap</span><span class="lang-fr hidden">Le Parcours : Notre Feuille de Route Collaborative de 8 Semaines</span></h2>
+        <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto"><span class="lang-en">This project is a partnership. Here is a breakdown of the development phases and how we will work together.</span><span class="lang-fr hidden">Ce projet est un partenariat. Voici une ventilation des phases de développement et de notre collaboration.</span></p>
+        <div class="border-l-2 border-brand-accent space-y-10 pl-8">
+            <div>
+                <h3 class="text-xl font-bold"><span class="lang-en">Phase 1 (Weeks 1-2): The Blueprint</span><span class="lang-fr hidden">Phase 1 (Semaines 1-2) : Le Plan Directeur</span></h3>
+                <p class="text-sm mt-2"><span class="font-semibold"><span class="lang-en">My Role:</span><span class="lang-fr hidden">Mon Rôle :</span></span> <span class="lang-en">I will create visual wireframes and design the database structure.</span><span class="lang-fr hidden">Je créerai les maquettes visuelles et concevrai la structure de la base de données.</span></p>
+                <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">Your Role:</span><span class="lang-fr hidden">Votre Rôle :</span></span> <span class="lang-en">Provide feedback on the wireframes and confirm the final feature list.</span><span class="lang-fr hidden">Donner votre avis sur les maquettes et confirmer la liste finale des fonctionnalités.</span></p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold"><span class="lang-en">Phase 2 (Weeks 3-6): Core Development</span><span class="lang-fr hidden">Phase 2 (Semaines 3-6) : Développement Principal</span></h3>
+                <p class="text-sm mt-2"><span class="font-semibold"><span class="lang-en">My Role:</span><span class="lang-fr hidden">Mon Rôle :</span></span> <span class="lang-en">I will build both the admin dashboard and the customer-facing application.</span><span class="lang-fr hidden">Je développerai le tableau de bord admin ainsi que l'application client.</span></p>
+                <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">Your Role:</span><span class="lang-fr hidden">Votre Rôle :</span></span> <span class="lang-en">Participate in a mid-project demo and begin populating your menu.</span><span class="lang-fr hidden">Participer à une démo à mi-parcours et commencer à remplir votre menu.</span></p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold"><span class="lang-en">Phase 3 (Weeks 7-8): Launch Readiness</span><span class="lang-fr hidden">Phase 3 (Semaines 7-8) : Préparation au Lancement</span></h3>
+                <p class="text-sm mt-2"><span class="font-semibold"><span class="lang-en">My Role:</span><span class="lang-fr hidden">Mon Rôle :</span></span> <span class="lang-en">I will conduct extensive testing, deploy the application, and set up monitoring.</span><span class="lang-fr hidden">Je réaliserai des tests approfondis, déploierai l'application et mettrai en place le monitoring.</span></p>
+                <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">Your Role:</span><span class="lang-fr hidden">Votre Rôle :</span></span> <span class="lang-en">Participate in final testing and a staff training session.</span><span class="lang-fr hidden">Participer aux tests finaux et à une session de formation du personnel.</span></p>
+            </div>
+        </div>
+      </section>
+      
+      <!-- After Launch -->
+      <section id="after-launch" class="pt-16">
+        <h2 class="text-4xl font-bold section-title text-center"><span class="lang-en">Life After Launch: Support & Growth</span><span class="lang-fr hidden">La Vie Après le Lancement : Support & Croissance</span></h2>
+        <div class="grid md:grid-cols-2 gap-8 mt-10">
+             <div class="p-6 bg-brand-card border border-brand-border rounded-lg print-no-bg">
+                <h3 class="font-bold text-lg"><span class="lang-en">Ongoing Operational Costs</span><span class="lang-fr hidden">Coûts Opérationnels Continus</span></h3>
+                <ul class="text-sm space-y-2 mt-4">
+                    <li><span class="font-semibold"><span class="lang-en">Domain:</span><span class="lang-fr hidden">Domaine :</span></span> ~15 MAD/month</li>
+                    <li><span class="font-semibold"><span class="lang-en">Hosting/Database:</span><span class="lang-fr hidden">Hébergement/BDD :</span></span> 0 - 250 MAD/month</li>
+                    <li class="font-bold mt-2"><span class="lang-en">Typical Total:</span><span class="lang-fr hidden">Total Typique :</span> 60 - 300 MAD/month</li>
+                </ul>
+            </div>
+             <div class="p-6 bg-brand-card border border-brand-border rounded-lg print-no-bg">
+                <h3 class="font-bold text-lg"><span class="lang-en">Ongoing Support (Optional)</span><span class="lang-fr hidden">Support Continu (Optionnel)</span></h3>
+                 <ul class="text-sm space-y-2 mt-4">
+                    <li><span class="font-semibold"><span class="lang-en">Security & Stability (500 MAD/mo):</span><span class="lang-fr hidden">Sécurité & Stabilité (500 MAD/mois) :</span></span> <span class="lang-en">Monitoring, updates, bug fixes.</span><span class="lang-fr hidden">Monitoring, mises à jour, corrections.</span></li>
+                    <li><span class="font-semibold"><span class="lang-en">Growth Partner (1,200 MAD/mo):</span><span class="lang-fr hidden">Partenaire Croissance (1,200 MAD/mois) :</span></span> <span class="lang-en">Above, plus minor feature tweaks.</span><span class="lang-fr hidden">Ci-dessus, plus petites modifications.</span></li>
+                </ul>
+            </div>
+        </div>
+      </section>
+      
+      <!-- Next Steps -->
+      <section id="next-steps" class="pt-16">
+         <h2 class="text-4xl font-bold section-title text-center"><span class="lang-en">Agreement & Next Steps</span><span class="lang-fr hidden">Accord & Prochaines Étapes</span></h2>
+         <div class="mt-10 max-w-2xl mx-auto space-y-6 bg-brand-card border border-brand-border rounded-xl p-8 print-no-bg">
+            <div>
+                <h3 class="font-semibold"><span class="lang-en">Payment Terms</span><span class="lang-fr hidden">Conditions de Paiement</span></h3>
+                <p class="text-sm text-brand-muted"><span class="lang-en">A 3-part structure: 30% Deposit, 40% at the Phase 3 demo, 30% upon final delivery.</span><span class="lang-fr hidden">Structure en 3 parties : 30% d'acompte, 40% à la démo de la Phase 3, 30% à la livraison finale.</span></p>
+            </div>
+             <div>
+                <h3 class="font-semibold"><span class="lang-en">Deliverables</span><span class="lang-fr hidden">Livrables</span></h3>
+                <p class="text-sm text-brand-muted"><span class="lang-en">You will receive the deployed web application, complete source code, admin credentials, and a training session.</span><span class="lang-fr hidden">Vous recevrez l'application web déployée, le code source complet, les accès admin et une session de formation.</span></p>
+            </div>
+         </div>
+         <div class="mt-12 text-center">
+            <a href="mailto:your-email@example.com?subject=Restaurant App Proposal Acceptance" class="bg-brand-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block text-lg">
+                <span class="lang-en">Accept & Start Project</span><span class="lang-fr hidden">Accepter & Démarrer le Projet</span>
+            </a>
+         </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const enBtn = document.getElementById('lang-en-btn');
+        const frBtn = document.getElementById('lang-fr-btn');
+        const enElements = document.querySelectorAll('.lang-en');
+        const frElements = document.querySelectorAll('.lang-fr');
+
+        const setLanguage = (lang) => {
+            if (lang === 'fr') {
+                enElements.forEach(el => el.classList.add('hidden'));
+                frElements.forEach(el => el.classList.remove('hidden'));
+                frBtn.classList.add('bg-brand-card', 'text-brand-text');
+                enBtn.classList.remove('bg-brand-card', 'text-brand-text');
+                document.documentElement.lang = 'fr';
+            } else {
+                frElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                enBtn.classList.add('bg-brand-card', 'text-brand-text');
+                frBtn.classList.remove('bg-brand-card', 'text-brand-text');
+                document.documentElement.lang = 'en';
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        };
+
+        enBtn.addEventListener('click', () => setLanguage('en'));
+        frBtn.addEventListener('click', () => setLanguage('fr'));
+
+        const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        setLanguage(preferredLanguage);
+        
+        document.getElementById('print-button').addEventListener('click', () => window.print());
+    });
+  </script>
+</body>
+</html>

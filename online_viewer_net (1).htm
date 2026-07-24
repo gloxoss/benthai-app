@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Strategic Proposal — Restaurant Ordering Platform (MVP in 8 Weeks)</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              bg: '#F7F8FA',
+              card: '#FFFFFF',
+              border: '#E6E8EC',
+              text: '#111827',
+              muted: '#6B7280',
+              accent: '#2563EB',
+              accentDark: '#1E40AF',
+              soft: '#EFF6FF',
+              success: '#10B981',
+              warn: '#F59E0B',
+              danger: '#EF4444'
+            }
+          },
+          boxShadow: {
+            soft: '0 8px 30px rgba(17,24,39,0.06)',
+            ring: '0 1px 0 rgba(17,24,39,0.04), 0 20px 40px -20px rgba(17,24,39,0.25)'
+          },
+          borderRadius: {
+            xl2: '16px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth text rendering */
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    /* Section anchor offset */
+    h1, h2, h3, h4 { scroll-margin-top: 96px; }
+
+    /* Print optimization */
+    @media print {
+      #topbar, #mobileNav, .no-print, .cta-bar, #backToTop { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+      .page, .card { border: none !important; box-shadow: none !important; }
+      .container { max-width: 100% !important; padding: 0 !important; }
+      a[href]:after { content: '' !important; }
+      .avoid-break { page-break-inside: avoid; }
+      .section-gap { margin-top: 16px !important; margin-bottom: 16px !important; }
+    }
+
+    /* Minimal scrollbar */
+    *::-webkit-scrollbar { width: 10px; height: 10px; }
+    *::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 8px; }
+    .dark *::-webkit-scrollbar-thumb { background: #374151; }
+  </style>
+</head>
+
+<body class="bg-brand.bg text-brand.text font-sans">
+  <!-- Topbar -->
+  <header id="topbar" class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-brand.border">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <button id="menuBtn" class="lg:hidden p-2 rounded-lg border border-brand.border hover:bg-gray-50" aria-label="Open menu">
+          <svg class="h-5 w-5 text-brand.muted" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="h-6 w-6 rounded bg-gradient-to-br from-brand.accent to-blue-400"></div>
+        <div class="leading-tight">
+          <div class="text-[15px] font-semibold tracking-tight">Restaurant Ordering Platform</div>
+          <div class="text-[12px] text-brand.muted">Strategic Proposal & Devis</div>
+        </div>
+      </div>
+      <nav class="hidden lg:flex items-center gap-6 text-sm text-brand.muted">
+        <a href="#overview" class="hover:text-brand.text">Overview</a>
+        <a href="#packages" class="hover:text-brand.text">Plans</a>
+        <a href="#investment" class="hover:text-brand.text">Investment</a>
+        <a href="#timeline" class="hover:text-brand.text">Timeline</a>
+        <a href="#architecture" class="hover:text-brand.text">Architecture</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="themeBtn" class="p-2 rounded-lg border border-brand.border hover:bg-gray-50" aria-label="Toggle theme">
+          <svg id="sun" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4" stroke-width="1.6"/><path stroke-width="1.6" d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93 6.34 6.34m11.32 11.32 1.41 1.41m0-12.73-1.41 1.41M6.34 17.66 4.93 19.07"/></svg>
+          <svg id="moon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.6" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button id="printBtn" class="hidden md:inline-flex items-center gap-2 bg-brand.accent text-white px-3.5 py-2 rounded-lg text-sm font-semibold hover:bg-brand.accentDark transition-colors">
+          <svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1M16 18v3H8v-3"/></svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div id="mobileNav" class="fixed inset-0 z-50 hidden">
+    <div id="overlay" class="absolute inset-0 bg-black/40"></div>
+    <aside class="absolute left-0 top-0 h-full w-80 bg-white border-r border-brand.border p-5">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <div class="h-6 w-6 rounded bg-gradient-to-br from-brand.accent to-blue-400"></div>
+          <div class="font-semibold">Menu</div>
+        </div>
+        <button id="closeNav" class="p-2 rounded-lg border border-brand.border hover:bg-gray-50" aria-label="Close menu">
+          <svg class="h-5 w-5 text-brand.muted" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="space-y-2 text-[15px]">
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#overview">Overview</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#opportunity">Opportunity</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#mvp">MVP Scope</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#packages">Plans & Pricing</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#investment">Investment</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#timeline">Timeline</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#architecture">Architecture</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#add-ons">Add-ons</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#costs">Ongoing Costs</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#maintenance">Maintenance</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#acceptance">Acceptance</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#assumptions">Assumptions</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#deliverables">Deliverables</a>
+        <a class="block px-2 py-2 rounded hover:bg-gray-50" href="#next-steps">Next Steps</a>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- Page -->
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-10 lg:py-14">
+    <main class="grid lg:grid-cols-12 gap-8">
+      <!-- TOC -->
+      <aside class="hidden lg:block lg:col-span-3">
+        <div class="sticky top-24 p-4 rounded-xl border border-brand.border bg-white shadow-soft">
+          <div class="text-[12px] uppercase tracking-wider text-brand.muted mb-2">Contents</div>
+          <nav class="space-y-1 text-[14.5px]">
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#overview">Overview</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#opportunity">Opportunity</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#mvp">MVP Scope</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#packages">Plans & Pricing</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#investment">Investment</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#timeline">Timeline</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#architecture">Architecture</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#add-ons">Add-ons</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#costs">Ongoing Costs</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#maintenance">Maintenance</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#payment">Payment</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#acceptance">Acceptance</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#assumptions">Assumptions</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#deliverables">Deliverables</a>
+            <a class="toc-link block px-2 py-1 rounded hover:bg-gray-50" href="#next-steps">Next Steps</a>
+          </nav>
+          <div class="mt-4 p-3 rounded-lg border border-brand.border">
+            <div class="text-[12px] uppercase tracking-wider text-brand.muted mb-1">Contact</div>
+            <div class="text-sm font-medium">Oussama Zaki</div>
+            <div class="text-xs text-brand.muted">Software & Web/App Developer</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <section class="lg:col-span-9 space-y-8">
+        <!-- Overview / Hero -->
+        <section id="overview" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <div class="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p class="text-sm font-semibold text-brand.accent">Proposal for [Client Restaurant Name]</p>
+              <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-2">A Custom Ordering Platform to Drive Growth & Efficiency</h1>
+              <p class="mt-3 text-brand.muted max-w-2xl">Responsive customer site + mobile-friendly cashier console with ticket printing, menu management, reporting, and monitoring. Delivered as an MVP within 8 weeks.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-brand.soft text-brand.accent border border-blue-100">MVP — 8 Weeks</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-green-50 text-brand.success border border-green-100">Budget 7,000–15,000 MAD</span>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 border border-gray-200">Commission-Free</span>
+            </div>
+          </div>
+          <div class="mt-6 grid sm:grid-cols-3 gap-3">
+            <div class="card p-4 rounded-xl border border-brand.border">
+              <div class="text-[12px] uppercase tracking-wider text-brand.muted">Goal</div>
+              <div class="mt-1.5 font-medium">Orders + Cashier Console + Tickets</div>
+            </div>
+            <div class="card p-4 rounded-xl border border-brand.border">
+              <div class="text-[12px] uppercase tracking-wider text-brand.muted">Printing</div>
+              <div class="mt-1.5 font-medium">80mm PDF → Thermal Printer</div>
+            </div>
+            <div class="card p-4 rounded-xl border border-brand.border">
+              <div class="text-[12px] uppercase tracking-wider text-brand.muted">Ownership</div>
+              <div class="mt-1.5 font-medium">No commissions. Own the platform + data.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Executive summary -->
+        <section class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Executive Summary</h2>
+          <div class="mt-3 space-y-4 text-[15.5px] text-brand.muted">
+            <p>Third‑party delivery apps improve reach but erode margins via 25–35% commissions. Phone orders cause errors and slowdowns. Your custom platform removes commissions, reduces mistakes, and builds a direct, valuable relationship with customers.</p>
+            <p>We’ll ship a pragmatic MVP in 8 weeks: a fast, branded ordering site and an operations console for the caisse manager with ticket printing, menu management, and core reporting. The result is an owned, scalable asset with low monthly costs.</p>
+          </div>
+        </section>
+
+        <!-- Opportunity -->
+        <section id="opportunity" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">The Opportunity</h2>
+          <div class="mt-5 grid md:grid-cols-3 gap-4">
+            <div class="p-5 rounded-xl border border-brand.border">
+              <div class="font-semibold">Keep 100% of Profits</div>
+              <p class="mt-1.5 text-sm text-brand.muted">Eliminate commission fees and redirect savings to growth, quality, or pricing power.</p>
+            </div>
+            <div class="p-5 rounded-xl border border-brand.border">
+              <div class="font-semibold">Own Customer Data</div>
+              <p class="mt-1.5 text-sm text-brand.muted">Understand behavior, re-market directly, and increase repeat orders with insights.</p>
+            </div>
+            <div class="p-5 rounded-xl border border-brand.border">
+              <div class="font-semibold">Elevate Brand</div>
+              <p class="mt-1.5 text-sm text-brand.muted">A professional, on-brand UX fosters trust and loyalty beyond templated apps.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- MVP Scope -->
+        <section id="mvp" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">MVP Scope</h2>
+          <div class="mt-5 grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="font-semibold">Customer (Web App)</h3>
+              <ul class="mt-2 space-y-2 text-[15px] text-brand.muted">
+                <li>Browse/search menu (images, prices, categories)</li>
+                <li>Cart with notes and simple options/variants</li>
+                <li>Place order (pickup/dine-in; optional address)</li>
+                <li>Cash on delivery / pay at counter (online pay later)</li>
+                <li>Status tracking: Pending → En traitement → Prêt → Livré/Retiré</li>
+                <li>Responsive, fast, basic SEO; PWA-ready baseline</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold">Cashier/Admin (Dashboard)</h3>
+              <ul class="mt-2 space-y-2 text-[15px] text-brand.muted">
+                <li>Secure login, roles (Admin, Cashier)</li>
+                <li>Realtime order queue, status updates, filters</li>
+                <li>One‑click 80mm ticket (PDF) with QR + order code</li>
+                <li>Menu CRUD (categories, items, prices, availability)</li>
+                <li>Reports: daily orders/revenue, top items; CSV export</li>
+                <li>Browser notifications for new orders</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6 grid md:grid-cols-3 gap-4">
+            <div class="p-4 rounded-xl border border-brand.border">
+              <div class="text-[12px] uppercase tracking-wider text-brand.muted">Must</div>
+              <ul class="mt-2 list-disc list-inside text-[15px] text-brand.muted space-y-1">
+                <li>Menu, cart, place order</li>
+                <li>Cashier queue + status + 80mm ticket (PDF)</li>
+                <li>Menu CRUD, daily totals, auth, backups</li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-xl border border-brand.border">
+              <div class="text-[12px] uppercase tracking-wider text-brand.muted">Should</div>
+              <ul class="mt-2 list-disc list-inside text-[15px] text-brand.muted space-y-1">
+                <li>Realtime updates, email confirmations</li>
+                <li>Charts, CSV export, i18n‑ready</li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-xl border border-brand.border">
+              <div class="text-[12px] uppercase tracking-wider text-brand.muted">Could (Later)</div>
+              <ul class="mt-2 list-disc list-inside text-[15px] text-brand.muted space-y-1">
+                <li>Online payments (CMI/Stripe‑like)</li>
+                <li>Delivery module, promotions/loyalty</li>
+                <li>Android native printing, multi‑branch</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6 p-4 rounded-xl border border-dashed border-brand.border">
+            <div class="text-[12px] uppercase tracking-wider text-brand.muted">Ticket Printing (MVP)</div>
+            <p class="mt-2 text-[15px] text-brand.muted">Render receipt as 80mm PDF with print CSS; cashier prints via paired thermal printer (Android system dialog). Upgrade later to native Bluetooth ESC/POS or network printing if needed.</p>
+          </div>
+        </section>
+
+        <!-- Packages -->
+        <section id="packages" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Plans & Pricing (MAD, taxes excluded)</h2>
+          <div class="mt-6 grid md:grid-cols-3 gap-5">
+            <!-- Starter -->
+            <div class="rounded-2xl border border-brand.border p-6">
+              <div class="text-sm font-semibold text-brand.muted">Starter MVP</div>
+              <div class="mt-1 text-3xl font-extrabold tracking-tight">7,000</div>
+              <p class="mt-2 text-sm text-brand.muted">Tight budget, single‑branch essentials</p>
+              <ul class="mt-4 space-y-2 text-[15px]">
+                <li>Customer site (browse/cart/order)</li>
+                <li>Manual refresh order list + status updates</li>
+                <li>80mm PDF ticket, menu CRUD, daily totals</li>
+              </ul>
+              <div class="mt-5 text-xs text-brand.muted">No realtime, minimal reports, no email/SMS, FR only. 30‑day bug‑fix. Delivery 6–7 weeks.</div>
+            </div>
+            <!-- Lean -->
+            <div class="rounded-2xl border-2 border-brand.accent p-6 bg-brand.soft relative overflow-hidden">
+              <div class="absolute top-3 right-3 text-[11px] font-bold uppercase tracking-wider bg-brand.accent text-white px-2.5 py-1 rounded-full">Recommended</div>
+              <div class="text-sm font-semibold text-brand.accent">Lean MVP</div>
+              <div class="mt-1 text-3xl font-extrabold tracking-tight">12,000</div>
+              <p class="mt-2 text-sm text-brand.muted">Balanced features & delivery time</p>
+              <ul class="mt-4 space-y-2 text-[15px]">
+                <li>Realtime updates + notifications</li>
+                <li>Order tracking page + email confirmations</li>
+                <li>Basic charts + CSV export + backups</li>
+                <li>i18n‑ready (FR enabled; AR later)</li>
+              </ul>
+              <div class="mt-5 text-xs text-brand.muted">45‑day bug‑fix. Delivery 8 weeks.</div>
+            </div>
+            <!-- Complete -->
+            <div class="rounded-2xl border border-brand.border p-6">
+              <div class="text-sm font-semibold text-brand.muted">Complete MVP</div>
+              <div class="mt-1 text-3xl font-extrabold tracking-tight">14,500</div>
+              <p class="mt-2 text-sm text-brand.muted">Richer MVP before scaling</p>
+              <ul class="mt-4 space-y-2 text-[15px]">
+                <li>Arabic + French UI</li>
+                <li>Role management UI + shift/Z report</li>
+                <li>Low‑stock flag, staged rollout, light load test</li>
+              </ul>
+              <div class="mt-5 text-xs text-brand.muted">60‑day bug‑fix. Delivery 8 weeks.</div>
+            </div>
+          </div>
+
+          <!-- Feature matrix -->
+          <div class="mt-8 overflow-x-auto">
+            <table class="w-full text-sm border-separate border-spacing-y-2">
+              <thead>
+                <tr class="text-brand.muted">
+                  <th class="px-4 py-2 text-left font-semibold text-[15px]">Feature</th>
+                  <th class="px-4 py-2 text-center font-semibold">Starter<br><span class="text-xs font-normal text-brand.muted">7,000</span></th>
+                  <th class="px-4 py-2 text-center font-semibold text-brand.accent">Lean<br><span class="text-xs font-normal text-brand.muted">12,000</span></th>
+                  <th class="px-4 py-2 text-center font-semibold">Complete<br><span class="text-xs font-normal text-brand.muted">14,500</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-gray-50"><td class="px-4 py-2 font-semibold" colspan="4">Core Platform</td></tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-2">Digital Menu & Cart</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">✓</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-2">Admin Dashboard</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">✓</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-2">80mm Ticket (PDF)</td><td class="text-center">✓</td><td class="text-center">✓</td><td class="text-center">✓</td>
+                </tr>
+                <tr class="bg-gray-50"><td class="px-4 py-2 font-semibold" colspan="4">Automation & Experience</td></tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-2">Realtime Order Updates</td><td class="text-center text-brand.muted">–</td><td class="text-center font-bold text-brand.accent">✓</td><td class="text-center">✓</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-2">Customer Tracking Page</td><td class="text-center text-brand.muted">–</td><td class="text-center font-bold text-brand.accent">✓</td><td class="text-center">✓</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-2">Email Confirmations</td><td class="text-center text-brand.muted">–</td><td class="text-center font-bold text-brand.accent">✓</td><td class="text-center">✓</td>
+                </tr>
+                <tr class="bg-gray-50"><td class="px-4 py-2 font-semibold" colspan="4">Analytics & Control</td></tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-2">Basic Sales Analytics</td><td class="text-center text-brand.muted">–</td><td class="text-center font-bold text-brand.accent">✓</td><td class="text-center">✓</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-2">Multi‑language (FR/AR)</td><td class="text-center text-brand.muted">–</td><td class="text-center text-brand.muted">–</td><td class="text-center font-bold">✓</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-2">Role Management</td><td class="text-center text-brand.muted">–</td><td class="text-center text-brand.muted">–</td><td class="text-center font-bold">✓</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Investment -->
+        <section id="investment" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Investment</h2>
+          <p class="mt-2 text-brand.muted">One‑time build + low monthly ops. Payment tied to milestones to protect both sides.</p>
+
+          <div class="mt-6 grid md:grid-cols-2 gap-5">
+            <div class="p-5 rounded-xl border border-brand.border">
+              <div class="font-semibold">Payment Schedule</div>
+              <ul class="mt-2 space-y-1.5 text-[15px] text-brand.muted">
+                <li>30% deposit to start (non‑refundable after kickoff)</li>
+                <li>40% at MVP feature freeze (end of Week 6)</li>
+                <li>30% at delivery/acceptance (Week 8)</li>
+              </ul>
+            </div>
+            <div class="p-5 rounded-xl border border-brand.border">
+              <div class="font-semibold">Hardware (client‑provided)</div>
+              <ul class="mt-2 space-y-1.5 text-[15px] text-brand.muted">
+                <li>80mm thermal printer: 400–900 MAD</li>
+                <li>Optional Android POS with printer: 1,200–2,500 MAD</li>
+                <li>Paper rolls and accessories</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Timeline -->
+        <section id="timeline" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Timeline — 8 Weeks</h2>
+          <ol class="mt-5 grid md:grid-cols-2 gap-4 text-[15px]">
+            <li class="p-4 rounded-xl border border-brand.border">
+              <div class="text-sm font-semibold">Week 1</div>
+              <div class="text-brand.muted">Discovery, scope lock, wireframes, data model, architecture</div>
+            </li>
+            <li class="p-4 rounded-xl border border-brand.border">
+              <div class="text-sm font-semibold">Week 2</div>
+              <div class="text-brand.muted">Auth, RBAC, DB schemas, admin scaffolding</div>
+            </li>
+            <li class="p-4 rounded-xl border border-brand.border">
+              <div class="text-sm font-semibold">Week 3</div>
+              <div class="text-brand.muted">Menu CRUD + media upload + availability</div>
+            </li>
+            <li class="p-4 rounded-xl border border-brand.border">
+              <div class="text-sm font-semibold">Week 4</div>
+              <div class="text-brand.muted">Customer ordering flow (cart → order)</div>
+            </li>
+            <li class="p-4 rounded-xl border border-brand.border">
+              <div class="text-sm font-semibold">Week 5</div>
+              <div class="text-brand.muted">Cashier console (realtime queue, notifications)</div>
+            </li>
+            <li class="p-4 rounded-xl border border-brand.border">
+              <div class="text-sm font-semibold">Week 6</div>
+              <div class="text-brand.muted">Ticket PDF + QR + order tracking page</div>
+            </li>
+            <li class="p-4 rounded-xl border border-brand.border">
+              <div class="text-sm font-semibold">Week 7</div>
+              <div class="text-brand.muted">Reports/charts, CSV, SEO & performance polish</div>
+            </li>
+            <li class="p-4 rounded-xl border border-brand.border">
+              <div class="text-sm font-semibold">Week 8</div>
+              <div class="text-brand.muted">QA, bugfix, UAT, deploy, training</div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- Architecture -->
+        <section id="architecture" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Architecture & Stack</h2>
+          <div class="mt-5 grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="font-semibold">Stack</h3>
+              <ul class="mt-2 space-y-2 text-[15px] text-brand.muted">
+                <li>Frontend: Next.js (React), TailwindCSS, React Query, Next Intl (i18n)</li>
+                <li>Backend: Next.js API routes or Node.js (Express/Nest)</li>
+                <li>DB: PostgreSQL (Supabase / Neon / Railway)</li>
+                <li>Realtime: Supabase Realtime / WebSockets</li>
+                <li>Auth: Supabase Auth or NextAuth (email/password + OTP optional)</li>
+                <li>Email: Resend/SendGrid (transactional)</li>
+                <li>Monitoring: Sentry, UptimeRobot; CDN/DNS: Cloudflare</li>
+                <li>Deploy: Vercel (serverless) or Docker on VPS (DO)</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold">Data Model (Simplified)</h3>
+              <pre class="mt-2 text-[13px] leading-6 p-4 bg-gray-50 rounded-lg border border-brand.border overflow-auto">
+User(id, name, email, phone, role)
+Store(id, name, address)
+Category(id, store_id, name, sort)
+Item(id, category_id, name, price, description, image_url, active)
+ItemOption(id, item_id, name, type[multi/single], choices[])
+Order(id, user_id?, code, channel[web/cashier], status[pending/en_traitement/pret/livre], totals, created_at)
+OrderItem(id, order_id, item_id, name_snapshot, price_snapshot, qty, options_snapshot)
+Payment(id, order_id, method[cash/card], amount, status)
+PrintJob(id, order_id, status, attempts, last_error)
+AuditLog(id, actor_id, action, entity, entity_id, diff, created_at)
+              </pre>
+              <div class="mt-3 p-3 rounded-lg border border-brand.border text-[13.5px] text-brand.muted">
+                Printing: 80mm PDF via system print dialog (Android/desktop). Native ESC/POS later if needed.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Add-ons -->
+        <section id="add-ons" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">One‑time Optional Add‑ons</h2>
+          <ul class="mt-5 grid md:grid-cols-2 gap-4 text-[15px]">
+            <li class="p-4 rounded-xl border border-brand.border">Custom brand UI kit/design system — <span class="font-semibold">1,500</span></li>
+            <li class="p-4 rounded-xl border border-brand.border">Android cashier app (native ESC/POS) — <span class="font-semibold">4,000–6,000</span></li>
+            <li class="p-4 rounded-xl border border-brand.border">Online payments (CMI/Stripe‑like) — <span class="font-semibold">2,000–3,500</span> (+ gateway fees)</li>
+            <li class="p-4 rounded-xl border border-brand.border">Delivery module (zones/fees/courier) — <span class="font-semibold">2,000–3,500</span></li>
+            <li class="p-4 rounded-xl border border-brand.border">Multi‑branch support/switching — <span class="font-semibold">1,500–2,500</span></li>
+            <li class="p-4 rounded-xl border border-brand.border">Promotions/coupons — <span class="font-semibold">1,200–2,000</span></li>
+            <li class="p-4 rounded-xl border border-brand.border">Loyalty (points, wallets) — <span class="font-semibold">2,000–4,000</span></li>
+          </ul>
+        </section>
+
+        <!-- Ongoing costs -->
+        <section id="costs" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Estimated Ongoing Monthly Costs (Client)</h2>
+          <div class="mt-5 overflow-x-auto">
+            <table class="w-full text-left text-[14.5px] border-separate border-spacing-y-2">
+              <thead>
+                <tr class="text-brand.muted">
+                  <th class="px-4 py-2">Item</th>
+                  <th class="px-4 py-2">Estimate</th>
+                  <th class="px-4 py-2">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-3 font-medium">Domain</td>
+                  <td class="px-4 py-3">~10–17 MAD/mo (100–200/yr)</td>
+                  <td class="px-4 py-3">.ma / .com</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-3 font-medium">Hosting</td>
+                  <td class="px-4 py-3">60–250 MAD/mo</td>
+                  <td class="px-4 py-3">Vercel Pro 150–250; VPS 60–120</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-3 font-medium">Database</td>
+                  <td class="px-4 py-3">0–300 MAD/mo</td>
+                  <td class="px-4 py-3">Supabase/Neon (free → paid)</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-3 font-medium">Email</td>
+                  <td class="px-4 py-3">0–150 MAD/mo</td>
+                  <td class="px-4 py-3">Transactional only (free early)</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-3 font-medium">Monitoring</td>
+                  <td class="px-4 py-3">0–100 MAD/mo</td>
+                  <td class="px-4 py-3">Sentry, UptimeRobot</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-3 font-medium">Storage/CDN</td>
+                  <td class="px-4 py-3">0–100 MAD/mo</td>
+                  <td class="px-4 py-3">Images (Cloudflare R2/Supabase)</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="mt-3 text-[13.5px] text-brand.muted">
+              Typical MVP total: 60–500 MAD/month depending on usage and plan choices.
+            </div>
+          </div>
+        </section>
+
+        <!-- Maintenance -->
+        <section id="maintenance" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Maintenance & Support (Monthly)</h2>
+          <div class="mt-5 overflow-x-auto">
+            <table class="w-full text-left text-[14.5px] border-separate border-spacing-y-2">
+              <thead>
+                <tr class="text-brand.muted">
+                  <th class="px-4 py-2">Plan</th>
+                  <th class="px-4 py-2">Monthly</th>
+                  <th class="px-4 py-2">Included</th>
+                  <th class="px-4 py-2">Extra hours</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-3 font-medium">Basic</td>
+                  <td class="px-4 py-3 font-semibold">500</td>
+                  <td class="px-4 py-3">2h/mo, bug patches, dependency updates, backups check, uptime alerts</td>
+                  <td class="px-4 py-3">200 MAD/h</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-3 font-medium">Standard</td>
+                  <td class="px-4 py-3 font-semibold">1,200</td>
+                  <td class="px-4 py-3">6h/mo, minor changes, monthly report tuning, security patches</td>
+                  <td class="px-4 py-3">180 MAD/h</td>
+                </tr>
+                <tr class="bg-white rounded-xl shadow ring-1 ring-gray-100">
+                  <td class="px-4 py-3 font-medium">Premium</td>
+                  <td class="px-4 py-3 font-semibold">2,500</td>
+                  <td class="px-4 py-3">15h/mo, priority (&lt;24h), minor features, performance tuning, quarterly roadmap</td>
+                  <td class="px-4 py-3">160 MAD/h</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Payment -->
+        <section id="payment" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Payment Schedule</h2>
+          <ul class="mt-3 space-y-2 text-[15px] text-brand.muted">
+            <li>30% deposit to start (non‑refundable after kickoff)</li>
+            <li>40% at MVP feature‑freeze (end of Week 6)</li>
+            <li>30% at delivery/acceptance (Week 8) before production switch</li>
+          </ul>
+        </section>
+
+        <!-- Acceptance -->
+        <section id="acceptance" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Acceptance Criteria (Sample)</h2>
+          <ul class="mt-3 space-y-2 text-[15px] text-brand.muted">
+            <li>Customer places order → appears in cashier console within ≤2s</li>
+            <li>Cashier updates status through flow; prints 80mm ticket with QR, code, items, prices, notes</li>
+            <li>Admin CRUD: items, images, categories, availability</li>
+            <li>Reports show daily totals & top items; CSV export works</li>
+            <li>P95 page load &lt; 3s on menu pages over 3G/4G</li>
+          </ul>
+        </section>
+
+        <!-- Assumptions -->
+        <section id="assumptions" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Assumptions & Constraints</h2>
+          <ul class="mt-3 space-y-2 text-[15px] text-brand.muted">
+            <li>Single branch in MVP (multi‑branch is an add‑on)</li>
+            <li>Client provides branding (logo/colors), menu content (names/prices/images), and tax/service rules</li>
+            <li>Client selects thermal printer/device (Android/desktop)</li>
+            <li>No third‑party payment/delivery in MVP unless selected</li>
+            <li>All prices exclude taxes. Quote valid 30 days. Scope changes → change requests</li>
+          </ul>
+        </section>
+
+        <!-- Deliverables -->
+        <section id="deliverables" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Deliverables</h2>
+          <ul class="mt-3 space-y-2 text-[15px] text-brand.muted">
+            <li>Deployed MVP (production + staging) on client domain</li>
+            <li>Admin/cashier accounts and role setup</li>
+            <li>Source code in private GitHub repository</li>
+            <li>Configuration/runbook, backups plan, and 1–2h remote training</li>
+            <li>Bug‑fix warranty per selected package (30–60 days)</li>
+          </ul>
+        </section>
+
+        <!-- Next Steps -->
+        <section id="next-steps" class="page p-6 md:p-8 rounded-2xl border border-brand.border bg-white shadow-soft avoid-break">
+          <h2 class="text-2xl font-bold tracking-tight">Agreement & Next Steps</h2>
+          <div class="mt-4 grid md:grid-cols-2 gap-5">
+            <div class="p-5 rounded-xl border border-brand.border">
+              <div class="font-semibold">What to Confirm</div>
+              <ol class="mt-2 space-y-1.5 text-[15px] text-brand.muted list-decimal list-inside">
+                <li>Plan selection: Starter (7,000), Lean (12,000), or Complete (14,500)</li>
+                <li>Thermal printer model + cashier device</li>
+                <li>Menu data (CSV/images), branding (logo/colors), tax/service rules</li>
+                <li>Email sender name/domain for confirmations</li>
+              </ol>
+            </div>
+            <div class="p-5 rounded-xl border border-brand.border">
+              <div class="font-semibold">Kickoff Process</div>
+              <ol class="mt-2 space-y-1.5 text-[15px] text-brand.muted list-decimal list-inside">
+                <li>Sign proposal and pay 30% deposit</li>
+                <li>Schedule Week‑1 discovery and wireframing</li>
+                <li>Grant access to assets (logo, menu, domain)</li>
+              </ol>
+            </div>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="mailto:your-email@example.com?subject=Restaurant App Proposal — Acceptance&body=Hello Oussama,%0D%0A%0D%0AWe confirm proceeding with the [Starter/Lean/Complete] plan.%0D%0A%0D%0APlease share the contract and initial invoice.%0D%0A%0D%0ARegards," class="inline-flex items-center gap-2 bg-brand.accent text-white px-5 py-3 rounded-lg font-semibold hover:bg-brand.accentDark transition-colors text-[15px] no-print">
+              Accept & Start Project
+              <svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            <button id="printBtn2" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-brand.border hover:bg-gray-50 transition-colors text-[15px] no-print">
+              Print / Save PDF
+              <svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 9V3h12v6M6 18H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1M16 18v3H8v-3"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <footer class="pt-2 pb-10 text-center text-[13px] text-brand.muted">
+          © <span id="year"></span> Oussama Zaki — Proposal & Devis
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="fixed bottom-5 right-5 z-40 p-2.5 rounded-full bg-white border border-brand.border shadow-soft hover:bg-gray-50 hidden" aria-label="Back to top">
+    <svg class="h-5 w-5 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5m0 0l-7 7m7-7l7 7"/></svg>
+  </button>
+
+  <script>
+    // Theme persistence
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+    const sun = document.getElementById('sun');
+    const moon = document.getElementById('moon');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.classList.add('dark');
+      document.body.classList.add('bg-[#0b0c0f]', 'text-gray-100');
+      sun.classList.remove('hidden'); moon.classList.add('hidden');
+    }
+    themeBtn.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const dark = root.classList.contains('dark');
+      if (dark) {
+        document.body.classList.add('bg-[#0b0c0f]', 'text-gray-100');
+        sun.classList.remove('hidden'); moon.classList.add('hidden');
+      } else {
+        document.body.classList.remove('bg-[#0b0c0f]', 'text-gray-100');
+        sun.classList.add('hidden'); moon.classList.remove('hidden');
+      }
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    });
+
+    // Print
+    const printBtn = document.getElementById('printBtn');
+    const printBtn2 = document.getElementById('printBtn2');
+    [printBtn, printBtn2].forEach(b => b && b.addEventListener('click', () => window.print()));
+
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('hidden', window.scrollY < 300);
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Mobile drawer
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const overlay = document.getElementById('overlay');
+    const closeNav = document.getElementById('closeNav');
+    const toggleMobile = (show) => mobileNav.classList.toggle('hidden', !show);
+    menuBtn?.addEventListener('click', () => toggleMobile(true));
+    overlay?.addEventListener('click', () => toggleMobile(false));
+    closeNav?.addEventListener('click', () => toggleMobile(false));
+    mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMobile(false)));
+
+    // Active TOC highlighting
+    const links = document.querySelectorAll('.toc-link');
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(a => a.classList.remove('bg-gray-50', 'text-brand.text'));
+          const active = document.querySelector('.toc-link[href="#' + entry.target.id + '"]');
+          active?.classList.add('bg-gray-50', 'text-brand.text');
+        }
+      });
+    }, { rootMargin: '-60% 0px -35% 0px', threshold: 0.01 });
+    sections.forEach(s => observer.observe(s));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

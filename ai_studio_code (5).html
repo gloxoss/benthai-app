@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Strategic Proposal: Custom Restaurant Ordering Platform</title>
+  <meta name="description" content="Ultra-detailed bilingual proposal for a restaurant online ordering platform, covering strategic objectives, in-depth package comparisons, a collaborative roadmap, and full technical specifications." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'brand-bg': '#F9FAFB',
+            'brand-card': '#FFFFFF',
+            'brand-border': '#E5E7EB',
+            'brand-text': '#111827',
+            'brand-muted': '#6B7280',
+            'brand-accent': '#2563EB',
+            'brand-accent-light': '#EFF6FF',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .section-title { letter-spacing: -0.025em; }
+    h1, h2, h3, h4 { scroll-margin-top: 80px; }
+    .lang-en, .lang-fr { transition: opacity 0.3s ease; }
+    @media print {
+      #topbar, #next-steps a, #print-button, #lang-switcher { display: none !important; }
+      main { margin: 0 !important; }
+      section, div {
+        border: none !important; box-shadow: none !important; page-break-inside: avoid;
+      }
+      body { background: #fff !important; color: #000 !important;}
+      .print-no-bg { background-color: transparent !important; }
+      .lang-fr { display: none !important; } /* Default to printing English */
+    }
+  </style>
+</head>
+
+<body class="bg-brand-bg text-brand-text font-sans">
+
+  <!-- Header & Navigation -->
+  <header id="topbar" class="bg-brand-card/80 backdrop-blur-lg sticky top-0 z-40 border-b border-brand-border">
+    <div class="container mx-auto px-6 h-16 flex justify-between items-center">
+      <div class="font-bold text-lg tracking-tight">
+        <span class="lang-en">Strategic Proposal</span>
+        <span class="lang-fr hidden">Proposition Stratégique</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <nav class="hidden md:flex space-x-8 text-sm font-medium text-brand-muted">
+          <a href="#architecture" class="hover:text-brand-text">
+            <span class="lang-en">Architecture</span><span class="lang-fr hidden">Architecture</span>
+          </a>
+          <a href="#roadmap" class="hover:text-brand-text">
+            <span class="lang-en">Roadmap</span><span class="lang-fr hidden">Feuille de Route</span>
+          </a>
+          <a href="#investment" class="hover:text-brand-text">
+            <span class="lang-en">Investment</span><span class="lang-fr hidden">Investissement</span>
+          </a>
+        </nav>
+        <div id="lang-switcher" class="flex items-center border border-brand-border rounded-lg p-0.5 bg-brand-bg">
+            <button id="lang-en-btn" class="px-2 py-1 text-xs font-semibold rounded-md">EN</button>
+            <button id="lang-fr-btn" class="px-2 py-1 text-xs font-semibold rounded-md">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container mx-auto px-6 py-12 md:py-20">
+    <main class="max-w-4xl mx-auto">
+
+      <!-- Title Section -->
+      <section id="title" class="mb-16">
+        <p class="font-semibold text-brand-accent">
+            <span class="lang-en">PROPOSAL FOR [CLIENT RESTAURANT NAME]</span>
+            <span class="lang-fr hidden">PROPOSITION POUR [NOM DU RESTAURANT CLIENT]</span>
+        </p>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter section-title mt-2">
+          <span class="lang-en">A Custom Digital Platform to Drive Growth & Efficiency</span>
+          <span class="lang-fr hidden">Une Plateforme Numérique sur Mesure pour la Croissance et l'Efficacité</span>
+        </h1>
+      </section>
+      
+      <!-- Executive Summary -->
+      <section id="summary" class="mb-16">
+        <div class="p-8 bg-brand-card border border-brand-border rounded-xl">
+          <h2 class="text-2xl font-bold section-title mb-4">
+            <span class="lang-en">1.1 Executive Summary: A Recipe for Digital Success</span><span class="lang-fr hidden">1.1 Synthèse : Une Recette pour le Succès Numérique</span>
+          </h2>
+          <div class="space-y-4 text-brand-muted">
+            <p>
+              <span class="lang-en">The primary objective is to deploy a proprietary, state-of-the-art digital ordering platform. This initiative is a strategic shift from reliance on third-party aggregators, which impose high commissions and offer limited customization. By investing in a custom platform, you will own a permanent business asset, securing full control over customer relationships, data, and revenue.</span>
+              <span class="lang-fr hidden">L'objectif principal est de déployer une plateforme de commande numérique propriétaire et de pointe. Cette initiative est un virage stratégique par rapport à la dépendance aux agrégateurs tiers, qui imposent des commissions élevées et offrent une personnalisation limitée. En investissant dans une plateforme sur mesure, vous posséderez un actif commercial permanent, assurant un contrôle total sur les relations clients, les données et les revenus.</span>
+            </p>
+            <p>
+              <span class="lang-en">The core deliverables are a public-facing web app for customers and a dedicated Android POS application for the Caisse Manager for real-time order management and ticket printing. We will follow an agile, two-month MVP roadmap to ensure a rapid market entry, allowing you to capture online orders and gather feedback quickly while minimizing initial costs.</span>
+              <span class="lang-fr hidden">Les livrables principaux sont une application web publique pour les clients et une application POS Android dédiée pour le Gérant de Caisse pour la gestion des commandes en temps réel et l'impression de tickets. Nous suivrons une feuille de route agile de deux mois pour le MVP afin d'assurer une entrée rapide sur le marché, vous permettant de capter les commandes en ligne et de recueillir des commentaires rapidement tout en minimisant les coûts initiaux.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture -->
+      <section id="architecture" class="mb-16">
+         <h2 class="text-3xl font-bold section-title mb-6">
+            <span class="lang-en">1.2 System Architecture & User Flow</span><span class="lang-fr hidden">1.2 Architecture Système & Flux Utilisateur</span>
+         </h2>
+         <p class="text-brand-muted mb-8">
+            <span class="lang-en">A modern, three-tiered system architecture will be implemented for scalability, security, and real-time performance.</span>
+            <span class="lang-fr hidden">Une architecture système moderne à trois niveaux sera mise en œuvre pour la scalabilité, la sécurité et la performance en temps réel.</span>
+         </p>
+         <div class="grid md:grid-cols-3 gap-6 text-center">
+            <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+              <h3 class="font-bold text-lg"><span class="lang-en">Customer Web App</span><span class="lang-fr hidden">App Web Client</span></h3>
+              <p class="text-sm text-brand-muted mt-2"><span class="lang-en">The responsive digital storefront for menu browsing, customization, and secure payment.</span><span class="lang-fr hidden">La vitrine numérique responsive pour la navigation, la personnalisation et le paiement sécurisé.</span></p>
+            </div>
+             <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+              <h3 class="font-bold text-lg"><span class="lang-en">Manager POS App</span><span class="lang-fr hidden">App POS Gérant</span></h3>
+              <p class="text-sm text-brand-muted mt-2"><span class="lang-en">The Android-based operational hub for real-time order retrieval, status management, and ticket printing.</span><span class="lang-fr hidden">Le centre opérationnel sous Android pour la réception, la gestion et l'impression des commandes en temps réel.</span></p>
+            </div>
+             <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+              <h3 class="font-bold text-lg"><span class="lang-en">Backend & Database</span><span class="lang-fr hidden">Backend & Base de Données</span></h3>
+              <p class="text-sm text-brand-muted mt-2"><span class="lang-en">The central brain of the platform, handling all business logic, data storage, and secure communication via APIs.</span><span class="lang-fr hidden">Le cerveau central de la plateforme, gérant toute la logique métier, le stockage des données et la communication sécurisée via des API.</span></p>
+            </div>
+         </div>
+         <div class="mt-8 border-t border-brand-border pt-8">
+            <h4 class="font-semibold text-lg mb-4"><span class="lang-en">The Order Journey</span><span class="lang-fr hidden">Le Parcours de la Commande</span></h4>
+            <ol class="list-decimal list-inside space-y-2 text-brand-muted text-sm">
+                <li><span class="lang-en">A customer places an order on the website and pays securely.</span><span class="lang-fr hidden">Un client passe une commande sur le site web et paie de manière sécurisée.</span></li>
+                <li><span class="lang-en">The backend processes the data and stores it in the database.</span><span class="lang-fr hidden">Le backend traite les données et les stocke dans la base de données.</span></li>
+                <li><span class="lang-en">A real-time notification is instantly pushed to the Manager's POS device.</span><span class="lang-fr hidden">Une notification en temps réel est instantanément envoyée à l'appareil POS du Gérant.</span></li>
+                <li><span class="lang-en">The manager accepts the order, updating its status to "En traitement".</span><span class="lang-fr hidden">Le gérant accepte la commande, mettant son statut à jour à "En traitement".</span></li>
+                <li><span class="lang-en">The manager prints the kitchen ticket directly from the device.</span><span class="lang-fr hidden">Le gérant imprime le ticket de cuisine directement depuis l'appareil.</span></li>
+            </ol>
+         </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section id="tech-stack" class="mb-16">
+          <h2 class="text-3xl font-bold section-title mb-6">
+            <span class="lang-en">1.3 Technology Stack: The MERN Advantage</span><span class="lang-fr hidden">1.3 Stack Technologique : L'Avantage MERN</span>
+          </h2>
+          <p class="text-brand-muted mb-8">
+            <span class="lang-en">The recommended technology stack is MERN (MongoDB, Express.js, React, Node.js). This is a strategic decision tailored for performance, development speed, and future scalability.</span>
+            <span class="lang-fr hidden">Le stack technologique recommandé est MERN (MongoDB, Express.js, React, Node.js). C'est une décision stratégique conçue pour la performance, la vitesse de développement et la scalabilité future.</span>
+          </p>
+          <div class="space-y-4">
+              <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                  <h3 class="font-semibold"><span class="lang-en">Performance & Real-Time Experience</span><span class="lang-fr hidden">Performance & Expérience Temps Réel</span></h3>
+                  <p class="text-sm text-brand-muted mt-1"><span class="lang-en">Node.js and React are designed for high-concurrency, real-time applications. This ensures your platform remains fast and responsive, even during peak hours, and enables the instant order notifications crucial for your operations.</span><span class="lang-fr hidden">Node.js et React sont conçus pour des applications temps réel à haute concurrence. Cela garantit que votre plateforme reste rapide et réactive, même pendant les heures de pointe, et permet les notifications de commande instantanées cruciales pour vos opérations.</span></p>
+              </div>
+              <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                  <h3 class="font-semibold"><span class="lang-en">Developer Efficiency</span><span class="lang-fr hidden">Efficacité du Développeur</span></h3>
+                  <p class="text-sm text-brand-muted mt-1"><span class="lang-en">Using JavaScript across the entire stack (frontend, backend, database) eliminates context-switching. This cohesion directly translates into faster development cycles, making the ambitious two-month timeline practical and cost-effective.</span><span class="lang-fr hidden">L'utilisation de JavaScript sur l'ensemble du stack (frontend, backend, base de données) élimine le changement de contexte. Cette cohésion se traduit directement par des cycles de développement plus rapides, rendant le calendrier ambitieux de deux mois pratique et rentable.</span></p>
+              </div>
+              <div class="p-6 bg-brand-card border border-brand-border rounded-lg">
+                  <h3 class="font-semibold"><span class="lang-en">Future-Proofing & Extensibility</span><span class="lang-fr hidden">Pérennité & Extensibilité</span></h3>
+                  <p class="text-sm text-brand-muted mt-1"><span class="lang-en">The React components built for the web app can be directly reused with React Native to create true native mobile apps for iOS and Android in a future phase. This dramatically reduces the time and cost of future expansion.</span><span class="lang-fr hidden">Les composants React créés pour l'application web peuvent être directement réutilisés avec React Native pour créer de véritables applications mobiles natives pour iOS et Android dans une phase future. Cela réduit considérablement le temps et le coût d'une future expansion.</span></p>
+              </div>
+          </div>
+      </section>
+      
+      <!-- Roadmap Section -->
+      <section id="roadmap" class="pt-8">
+        <h2 class="text-4xl font-bold section-title text-center"><span class="lang-en">Part 2: The 2-Month MVP Development Roadmap</span><span class="lang-fr hidden">Partie 2 : Feuille de Route du Développement du MVP en 2 Mois</span></h2>
+        <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto"><span class="lang-en">The project will be executed in four distinct phases with clear deliverables to ensure transparency and timely delivery.</span><span class="lang-fr hidden">Le projet sera exécuté en quatre phases distinctes avec des livrables clairs pour assurer la transparence et une livraison dans les délais.</span></p>
+        <div class="border-l-2 border-brand-accent space-y-10 pl-8">
+            <div>
+                <h3 class="text-xl font-bold"><span class="lang-en">Phase 1 (Weeks 1-3): Foundation & Backend Services</span><span class="lang-fr hidden">Phase 1 (Semaines 1-3) : Fondation & Services Backend</span></h3>
+                <p class="text-sm mt-2"><span class="font-semibold"><span class="lang-en">Activities:</span><span class="lang-fr hidden">Activités :</span></span> <span class="lang-en">Project setup, database architecture (Users, Menu, Orders), and core API development for authentication and data management.</span><span class="lang-fr hidden">Mise en place du projet, architecture de la base de données (Utilisateurs, Menu, Commandes) et développement de l'API principale pour l'authentification et la gestion des données.</span></p>
+                <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">Deliverable:</span><span class="lang-fr hidden">Livrable :</span></span> <span class="lang-en">A secure, documented RESTful API ready to serve data.</span><span class="lang-fr hidden">Une API RESTful sécurisée et documentée, prête à servir des données.</span></p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold"><span class="lang-en">Phase 2 (Weeks 3-5): Caisse Manager POS Application</span><span class="lang-fr hidden">Phase 2 (Semaines 3-5) : Application POS du Gérant de Caisse</span></h3>
+                <p class="text-sm mt-2"><span class="font-semibold"><span class="lang-en">Activities:</span><span class="lang-fr hidden">Activités :</span></span> <span class="lang-en">UI development for the Android app, real-time dashboard with WebSockets, and integration with the device's thermal printer.</span><span class="lang-fr hidden">Développement de l'interface utilisateur pour l'application Android, tableau de bord en temps réel avec WebSockets et intégration avec l'imprimante thermique de l'appareil.</span></p>
+                <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">Deliverable:</span><span class="lang-fr hidden">Livrable :</span></span> <span class="lang-en">A functional Android APK with a live dashboard and integrated printing.</span><span class="lang-fr hidden">Un APK Android fonctionnel avec un tableau de bord en direct et une impression intégrée.</span></p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold"><span class="lang-en">Phase 3 (Weeks 5-7): Customer-Facing Web Application</span><span class="lang-fr hidden">Phase 3 (Semaines 5-7) : Application Web Client</span></h3>
+                 <p class="text-sm mt-2"><span class="font-semibold"><span class="lang-en">Activities:</span><span class="lang-fr hidden">Activités :</span></span> <span class="lang-en">Development of the responsive menu, item customization modal, shopping cart, and secure checkout with payment gateway integration.</span><span class="lang-fr hidden">Développement du menu responsive, de la modale de personnalisation d'articles, du panier d'achat et du paiement sécurisé avec intégration de la passerelle de paiement.</span></p>
+                <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">Deliverable:</span><span class="lang-fr hidden">Livrable :</span></span> <span class="lang-en">A complete, responsive website for customer ordering.</span><span class="lang-fr hidden">Un site web complet et responsive pour les commandes des clients.</span></p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold"><span class="lang-en">Phase 4 (Week 8): System Integration, Testing & Deployment</span><span class="lang-fr hidden">Phase 4 (Semaine 8) : Intégration, Tests & Déploiement</span></h3>
+                <p class="text-sm mt-2"><span class="font-semibold"><span class="lang-en">Activities:</span><span class="lang-fr hidden">Activités :</span></span> <span class="lang-en">End-to-end testing of the full order flow on target hardware, final bug fixes, and deployment of all services to the live production server.</span><span class="lang-fr hidden">Tests de bout en bout du flux de commande complet sur le matériel cible, corrections finales des bugs et déploiement de tous les services sur le serveur de production.</span></p>
+                <p class="text-sm mt-1"><span class="font-semibold"><span class="lang-en">Deliverable:</span><span class="lang-fr hidden">Livrable :</span></span> <span class="lang-en">A fully deployed and operational platform, ready for the first order.</span><span class="lang-fr hidden">Une plateforme entièrement déployée et opérationnelle, prête pour la première commande.</span></p>
+            </div>
+        </div>
+      </section>
+      
+      <!-- Investment -->
+      <section id="investment" class="pt-16">
+           <h2 class="text-4xl font-bold section-title text-center"><span class="lang-en">Part 4: Comprehensive Financial Analysis</span><span class="lang-fr hidden">Partie 4 : Analyse Financière Complète</span></h2>
+           <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto"><span class="lang-en">This section provides a transparent breakdown of all costs associated with the project.</span><span class="lang-fr hidden">Cette section fournit une ventilation transparente de tous les coûts associés au projet.</span></p>
+           
+           <div class="bg-brand-card border border-brand-border rounded-xl p-8 mb-8 print-no-bg">
+                <h3 class="text-xl font-bold section-title mb-4"><span class="lang-en">4.1 One-Time Project Investment (Devis)</span><span class="lang-fr hidden">4.1 Investissement Unique du Projet (Devis)</span></h3>
+                 <p class="text-sm text-brand-muted mb-6"><span class="lang-en">The total will be confirmed within the 7,000 to 15,000 DH range following our final scope confirmation.</span><span class="lang-fr hidden">Le total sera confirmé dans la fourchette de 7 000 à 15 000 DH après notre réunion de confirmation finale du périmètre.</span></p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="border-b border-brand-border"><tr><th class="p-2 text-left font-semibold">Service / Phase</th><th class="p-2 text-right font-semibold">Estimated Hours</th></tr></thead>
+                        <tbody class="divide-y divide-brand-border">
+                            <tr><td class="p-2">Phase 1: Backend & Database</td><td class="p-2 text-right">60</td></tr>
+                            <tr><td class="p-2">Phase 2: Caisse Manager POS App</td><td class="p-2 text-right">70</td></tr>
+                            <tr><td class="p-2">Phase 3: Customer Web App</td><td class="p-2 text-right">70</td></tr>
+                            <tr><td class="p-2">Phase 4: Integration & Deployment</td><td class="p-2 text-right">40</td></tr>
+                            <tr><td class="p-2">Project Management & Communication</td><td class="p-2 text-right">20</td></tr>
+                            <tr class="font-bold bg-brand-bg print-no-bg"><td class="p-2">Subtotal</td><td class="p-2 text-right">260</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+           </div>
+           
+            <div class="bg-brand-card border border-brand-border rounded-xl p-8 print-no-bg">
+                <h3 class="text-xl font-bold section-title mb-4"><span class="lang-en">4.2 Client-Side Costs: Hardware & Subscriptions</span><span class="lang-fr hidden">4.2 Coûts Côté Client : Matériel & Abonnements</span></h3>
+                 <p class="text-sm text-brand-muted mb-6"><span class="lang-en">In addition to the development fee, the client is responsible for procuring the necessary hardware and third-party services.</span><span class="lang-fr hidden">En plus des frais de développement, le client est responsable de l'acquisition du matériel et des services tiers nécessaires.</span></p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="border-b border-brand-border"><tr><th class="p-2 text-left font-semibold">Item</th><th class="p-2 text-left font-semibold">Est. Cost (DH)</th><th class="p-2 text-left font-semibold">Type</th></tr></thead>
+                        <tbody class="divide-y divide-brand-border">
+                            <tr><td class="p-2">Handheld POS Terminal</td><td class="p-2">1,800 - 2,800</td><td class="p-2">One-Time</td></tr>
+                            <tr><td class="p-2">Web Hosting</td><td class="p-2">~299</td><td class="p-2">Annual</td></tr>
+                            <tr><td class="p-2">Domain Name</td><td class="p-2">~119</td><td class="p-2">Annual</td></tr>
+                            <tr><td class="p-2">Payment Gateway Fees</td><td class="p-2">0.65% - 2.0%</td><td class="p-2">Per-Transaction</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+      </section>
+
+      <!-- After Launch -->
+      <section id="after-launch" class="pt-16">
+        <h2 class="text-4xl font-bold section-title text-center"><span class="lang-en">Part 5: Post-Launch Partnership & Maintenance</span><span class="lang-fr hidden">Partie 5 : Partenariat Post-Lancement & Maintenance</span></h2>
+        <p class="text-center text-brand-muted mt-4 mb-10 max-w-2xl mx-auto"><span class="lang-en">To protect your investment and ensure long-term health, security, and performance, a proactive maintenance plan is essential.</span><span class="lang-fr hidden">Pour protéger votre investissement et assurer la santé, la sécurité et la performance à long terme, un plan de maintenance proactif est essentiel.</span></p>
+        <div class="grid md:grid-cols-3 gap-6">
+             <div class="p-6 bg-brand-card border border-brand-border rounded-lg print-no-bg">
+                <h3 class="font-bold text-lg"><span class="lang-en">Basic</span><span class="lang-fr hidden">Basique</span></h3>
+                <p class="font-bold text-2xl mt-2">300 <span class="text-sm font-normal text-brand-muted">MAD/mo</span></p>
+                <ul class="text-sm space-y-2 mt-4 text-brand-muted">
+                    <li>✓ <span class="lang-en">Daily Backups</span><span class="lang-fr hidden">Sauvegardes Quotidiennes</span></li>
+                    <li>✓ <span class="lang-en">Uptime Monitoring</span><span class="lang-fr hidden">Monitoring Disponibilité</span></li>
+                    <li>✓ <span class="lang-en">Monthly Security Scans</span><span class="lang-fr hidden">Scans de Sécurité Mensuels</span></li>
+                </ul>
+            </div>
+             <div class="p-6 bg-brand-accent-light border-2 border-brand-accent rounded-lg print-no-bg">
+                <h3 class="font-bold text-lg text-brand-accent"><span class="lang-en">Standard</span><span class="lang-fr hidden">Standard</span></h3>
+                <p class="font-bold text-2xl mt-2">600 <span class="text-sm font-normal text-brand-muted">MAD/mo</span></p>
+                <ul class="text-sm space-y-2 mt-4 text-brand-muted">
+                    <li class="font-semibold text-brand-text"><span class="lang-en">All Basic features, plus:</span><span class="lang-fr hidden">Tout du Basique, plus :</span></li>
+                    <li>✓ <span class="lang-en">Priority Email Support</span><span class="lang-fr hidden">Support Email Prioritaire</span></li>
+                    <li>✓ 2 <span class="lang-en">hours/month for changes</span><span class="lang-fr hidden">heures/mois pour modifications</span></li>
+                </ul>
+            </div>
+            <div class="p-6 bg-brand-card border border-brand-border rounded-lg print-no-bg">
+                <h3 class="font-bold text-lg"><span class="lang-en">Premium</span><span class="lang-fr hidden">Premium</span></h3>
+                <p class="font-bold text-2xl mt-2">1,200 <span class="text-sm font-normal text-brand-muted">MAD/mo</span></p>
+                <ul class="text-sm space-y-2 mt-4 text-brand-muted">
+                    <li class="font-semibold text-brand-text"><span class="lang-en">All Standard features, plus:</span><span class="lang-fr hidden">Tout du Standard, plus :</span></li>
+                    <li>✓ <span class="lang-en">Phone Support</span><span class="lang-fr hidden">Support Téléphonique</span></li>
+                    <li>✓ 5 <span class="lang-en">hours/month for changes</span><span class="lang-fr hidden">heures/mois pour modifications</span></li>
+                    <li>✓ <span class="lang-en">Monthly Performance Report</span><span class="lang-fr hidden">Rapport de Performance Mensuel</span></li>
+                </ul>
+            </div>
+        </div>
+      </section>
+      
+      <!-- Next Steps -->
+      <section id="next-steps" class="pt-16">
+         <h2 class="text-4xl font-bold section-title text-center"><span class="lang-en">Agreement & Next Steps</span><span class="lang-fr hidden">Accord & Prochaines Étapes</span></h2>
+         <div class="mt-10 max-w-2xl mx-auto space-y-6 bg-brand-card border border-brand-border rounded-xl p-8 print-no-bg">
+            <div>
+                <h3 class="font-semibold"><span class="lang-en">Payment Terms</span><span class="lang-fr hidden">Conditions de Paiement</span></h3>
+                <p class="text-sm text-brand-muted"><span class="lang-en">40% deposit to begin, 30% at the Week 6 demo, and 30% upon final delivery.</span><span class="lang-fr hidden">Acompte de 40% pour commencer, 30% à la démo de la semaine 6, et 30% à la livraison finale.</span></p>
+            </div>
+             <div>
+                <h3 class="font-semibold"><span class="lang-en">How to Begin</span><span class="lang-fr hidden">Comment Commencer</span></h3>
+                <ol class="text-sm text-brand-muted list-decimal list-inside space-y-1 mt-2">
+                    <li><span class="lang-en">Confirm your chosen package or request adjustments.</span><span class="lang-fr hidden">Confirmez le forfait choisi ou demandez des ajustements.</span></li>
+                    <li><span class="lang-en">A formal contract and the initial invoice will be sent.</span><span class="lang-fr hidden">Un contrat formel et la première facture seront envoyés.</span></li>
+                    <li><span class="lang-en">Once signed and paid, we will schedule our Phase 1 kick-off meeting.</span><span class="lang-fr hidden">Une fois signé et payé, nous planifierons notre réunion de lancement de la Phase 1.</span></li>
+                </ol>
+            </div>
+         </div>
+         <div class="mt-12 text-center">
+            <a href="mailto:your-email@example.com?subject=Restaurant App Proposal Acceptance" class="bg-brand-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block text-lg">
+                <span class="lang-en">Accept & Start Project</span><span class="lang-fr hidden">Accepter & Démarrer le Projet</span>
+            </a>
+         </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const enBtn = document.getElementById('lang-en-btn');
+        const frBtn = document.getElementById('lang-fr-btn');
+        const enElements = document.querySelectorAll('.lang-en');
+        const frElements = document.querySelectorAll('.lang-fr');
+
+        const setLanguage = (lang) => {
+            if (lang === 'fr') {
+                enElements.forEach(el => el.classList.add('hidden'));
+                frElements.forEach(el => el.classList.remove('hidden'));
+                frBtn.classList.add('bg-brand-card', 'text-brand-text');
+                enBtn.classList.remove('bg-brand-card', 'text-brand-text');
+                document.documentElement.lang = 'fr';
+            } else {
+                frElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                enBtn.classList.add('bg-brand-card', 'text-brand-text');
+                frBtn.classList.remove('bg-brand-card', 'text-brand-text');
+                document.documentElement.lang = 'en';
+            }
+            localStorage.setItem('preferredLanguage', lang);
+        };
+
+        enBtn.addEventListener('click', () => setLanguage('en'));
+        frBtn.addEventListener('click', () => setLanguage('fr'));
+
+        const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        setLanguage(preferredLanguage);
+        
+        document.getElementById('print-button').addEventListener('click', () => window.print());
+    });
+  </script>
+</body>
+</html>
